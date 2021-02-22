@@ -1,0 +1,6 @@
+﻿  ScriptLoadManager.cpp
+  string_view is only available with C++17 or later.
+  main.cpp
+  string_view is only available with C++17 or later.
+  Generating Code...
+  Unknown.vcxproj -> C:\Users\newmr\Desktop\Study\Unknown\Source\Unknown\x64\Debug\Unknown.exe
