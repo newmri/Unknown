@@ -1,10 +1,9 @@
 #pragma once
 
-template <typename T>
 class Loader : public Obj
 {
-	ABSTRACT_OBJ(Loader<T>)
+	ABSTRACT_OBJ(Loader)
 
 public:
-	virtual void Load(T& loadData) = 0;
+	virtual void Load(string_view filePath) = 0;
 };

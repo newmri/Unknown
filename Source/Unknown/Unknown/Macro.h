@@ -6,14 +6,14 @@
 
 #define ABSTRACT_OBJ(CLASS)							\
 	DEFAULT_CONSTRUCTOR(CLASS)						\
-	protected:										\
+	public:											\
 		virtual ~CLASS() = default;					\
 	public:											\
 		virtual void Init(void) = 0;					
 
 #define OVERRIDE_OBJ(CLASS)							\
 	DEFAULT_CONSTRUCTOR(CLASS)						\
-	protected:										\
+	public:											\
 		virtual ~CLASS() override;					\
 	public:											\
 		virtual void Init(void) override;			
@@ -28,12 +28,16 @@
 
 #define DECLARE_SINGLETON(CLASS)					\
 	NO_COPY(CLASS)									\
-	private:										\
-		static unique_ptr<CLASS> instance;			\
-		static once_flag onceFlag;					\
 													\
 	public:											\
-		static CLASS& GetInstance(void);									
+		static CLASS& GetInstance(void);			\
+													\
+	private:										\
+		void Init(void);							\
+													\
+	private:										\
+		static unique_ptr<CLASS> instance;			\
+		static once_flag onceFlag;					
 
 #define IMPLEMENT_SINGLETON(CLASS)					\
 	unique_ptr<CLASS> CLASS::instance;				\
@@ -44,6 +48,7 @@
 		call_once(CLASS::onceFlag, []()				\
 		{											\
 			instance.reset(new CLASS);				\
+			(*(instance.get())).Init();				\
 		});											\
 													\
 		return *(instance.get());					\

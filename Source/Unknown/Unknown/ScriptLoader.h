@@ -1,10 +1,9 @@
 #pragma once
 
-template <typename T>
-class ScriptLoader : public Loader<string> 
+class ScriptLoader : public Loader
 {
-	OVERRIDE_OBJ(ScriptLoader<T>)
+	OVERRIDE_OBJ(ScriptLoader)
 
 public:
-	void Load(T& loadData) override;
+	void Load(string_view filePath) override;
 };

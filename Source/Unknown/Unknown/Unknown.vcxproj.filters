@@ -42,6 +42,9 @@
     <ClCompile Include="ScriptLoadManager.cpp">
       <Filter>02.Manager\00.LoadManager\01.ScriptLoadManager</Filter>
     </ClCompile>
+    <ClCompile Include="ScriptLoader.cpp">
+      <Filter>02.Manager\00.LoadManager\00. Loader\00.ScriptLoader</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Obj.h">
