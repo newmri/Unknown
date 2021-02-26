@@ -1,0 +1,5 @@
+Index,UniqueID,Name,Type,Equip Parts,UsableMinLevel,UsableMaxLevel,Job,Grade,BasicAddStatIndex,BasicMulStatIndex,IsCashItem,BuyPrice,SellPrice,MaxStackNum,Storage
+0,0,초보자의 목검,Equip,Right Hand,1,5,None,Normal,0,-1,0,100,50,1,0
+1,1,초보자의 방패,Equip,Left Hand,1,5,None,Normal,1,-1,0,80,40,1,0
+2,2,초보자의 HP 포션,Potion,None,1,10,None,Normal,2,-1,0,3,2,1000,0
+3,3,초보자의 MP 포션,Potion,None,1,10,None,Normal,3,-1,0,2,1,1000,0
