@@ -28,22 +28,19 @@
     <Filter Include="02.Manager\00.LoadManager\00. Loader">
       <UniqueIdentifier>{769cdd4a-0497-4691-883a-e9290de2c093}</UniqueIdentifier>
     </Filter>
-    <Filter Include="02.Manager\00.LoadManager\00. Loader\00.ScriptLoader">
-      <UniqueIdentifier>{3e497bef-7fc7-42f5-b0e7-8362e1eb7724}</UniqueIdentifier>
-    </Filter>
     <Filter Include="01.Obj">
       <UniqueIdentifier>{dc8e4668-571e-4317-8916-641a98d008fc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02.Manager\00.LoadManager\00. Loader\00.CSVLoader">
+      <UniqueIdentifier>{3e497bef-7fc7-42f5-b0e7-8362e1eb7724}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>02.Main</Filter>
     </ClCompile>
-    <ClCompile Include="ScriptLoadManager.cpp">
-      <Filter>02.Manager\00.LoadManager\01.ScriptLoadManager</Filter>
-    </ClCompile>
-    <ClCompile Include="ScriptLoader.cpp">
-      <Filter>02.Manager\00.LoadManager\00. Loader\00.ScriptLoader</Filter>
+    <ClCompile Include="CSVLoader.cpp">
+      <Filter>02.Manager\00.LoadManager\00. Loader\00.CSVLoader</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -68,8 +65,8 @@
     <ClInclude Include="ScriptLoadManager.h">
       <Filter>02.Manager\00.LoadManager\01.ScriptLoadManager</Filter>
     </ClInclude>
-    <ClInclude Include="ScriptLoader.h">
-      <Filter>02.Manager\00.LoadManager\00. Loader\00.ScriptLoader</Filter>
+    <ClInclude Include="CSVLoader.h">
+      <Filter>02.Manager\00.LoadManager\00. Loader\00.CSVLoader</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -1,6 +1,8 @@
 #pragma once
 
 #include <iostream>
+#include <fstream>
+#include <vector>
 #include <memory>
 #include <mutex>
 #include <thread>
@@ -12,5 +14,5 @@ using namespace std;
 #include "Macro.h"
 #include "Obj.h"
 #include "Loader.h"
-#include "ScriptLoader.h"
+#include "CSVLoader.h"
 #include "ScriptLoadManager.h"
