@@ -103,6 +103,8 @@ namespace ExcelToCSV
 
             this.destFullPath = directory + workSheet.Name + this.destExtention;
 
+            ((Excel.Range)workSheet.Rows[deleteRow, Type.Missing]).Delete(Excel.XlDeleteShiftDirection.xlShiftUp);
+
             workSheet.SaveAs(this.destFullPath, Excel.XlFileFormat.xlCSV);
         }
 
@@ -163,6 +165,8 @@ namespace ExcelToCSV
 
         private String infoMessage = "Plz drag and drop the file or the folder";
         private String doneMessage;
+
+        private int deleteRow = 1;
 
     }
 }

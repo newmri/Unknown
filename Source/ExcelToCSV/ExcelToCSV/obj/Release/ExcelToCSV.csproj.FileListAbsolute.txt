@@ -12,3 +12,4 @@ C:\Users\newmr\Desktop\Unknown\Source\ExcelToCSV\ExcelToCSV\obj\Release\ExcelToC
 C:\Users\newmr\Desktop\Unknown\Source\ExcelToCSV\ExcelToCSV\obj\Release\ExcelToCSV.csproj.GenerateResource.cache
 C:\Users\newmr\Desktop\Unknown\Source\ExcelToCSV\ExcelToCSV\obj\Release\ExcelToCSV.exe
 C:\Users\newmr\Desktop\Unknown\Source\ExcelToCSV\ExcelToCSV\obj\Release\ExcelToCSV.pdb
+C:\Users\newmr\Desktop\Unknown\Source\ExcelToCSV\ExcelToCSV\obj\Release\ExcelToCSV.csprojAssemblyReference.cache
