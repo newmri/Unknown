@@ -1,6 +1,9 @@
-#pragma once
-
 #include "Global.h"
+
+CSVLoader::CSVLoader()
+{
+	Init();
+}
 
 CSVLoader::~CSVLoader()
 {
@@ -21,11 +24,8 @@ void CSVLoader::Load(string_view filePath)
 
 	if (!fileStream.is_open())
 	{
-		string errorString = __FILE__;
-
-		throw invalid_argument(errorString);
+		throw invalid_argument(GET_INSTANCE(LogManager<ConsoleLogger>).MakeLog(LogType::LOG_ERROR, filePath, __FILE__, __FUNCTION__, __LINE__));
 	}
-
 
 	while (!fileStream.eof())
 	{
@@ -34,6 +34,4 @@ void CSVLoader::Load(string_view filePath)
 	}
 
 	fileStream.close();
-
-
 }

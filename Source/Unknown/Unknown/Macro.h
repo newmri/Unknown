@@ -8,14 +8,16 @@
 	DEFAULT_CONSTRUCTOR(CLASS)						\
 	public:											\
 		virtual ~CLASS() = default;					\
-	public:											\
+													\
+	private:										\
 		virtual void Init(void) = 0;					
 
 #define OVERRIDE_OBJ(CLASS)							\
-	DEFAULT_CONSTRUCTOR(CLASS)						\
 	public:											\
+		CLASS();									\
 		virtual ~CLASS() override;					\
-	public:											\
+													\
+	private:										\
 		virtual void Init(void) override;			
 
 #define NO_COPY(CLASS)								\

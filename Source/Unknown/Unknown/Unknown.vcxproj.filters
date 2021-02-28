@@ -22,17 +22,26 @@
     <Filter Include="02.Manager\00.LoadManager">
       <UniqueIdentifier>{495914e1-7ae1-423c-94a3-0b94b1b4d6de}</UniqueIdentifier>
     </Filter>
-    <Filter Include="02.Manager\00.LoadManager\01.ScriptLoadManager">
-      <UniqueIdentifier>{f854a233-2919-4b0e-bd0a-7a1f7039a3e0}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="02.Manager\00.LoadManager\00. Loader">
-      <UniqueIdentifier>{769cdd4a-0497-4691-883a-e9290de2c093}</UniqueIdentifier>
-    </Filter>
     <Filter Include="01.Obj">
       <UniqueIdentifier>{dc8e4668-571e-4317-8916-641a98d008fc}</UniqueIdentifier>
     </Filter>
-    <Filter Include="02.Manager\00.LoadManager\00. Loader\00.CSVLoader">
+    <Filter Include="02.Manager\02.LogManager">
+      <UniqueIdentifier>{417b90a5-3895-48a4-b998-ab990b61f8fd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02.Manager\00.LoadManager\01.ScriptLoadManager">
+      <UniqueIdentifier>{60c98f60-a0ae-45c1-b6ef-c8dd4e0c22ef}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02.Manager\00.LoadManager\00.Loader">
+      <UniqueIdentifier>{769cdd4a-0497-4691-883a-e9290de2c093}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02.Manager\00.LoadManager\00.Loader\00.CSVLoader">
       <UniqueIdentifier>{3e497bef-7fc7-42f5-b0e7-8362e1eb7724}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02.Manager\02.LogManager\00.Logger">
+      <UniqueIdentifier>{f5fd0fe8-a61f-45bd-a8ce-146bc4f2fd74}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02.Manager\02.LogManager\00.Logger\00.ConsoleLogger">
+      <UniqueIdentifier>{deed788e-51e5-44a3-837c-4ce47c6185c6}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -40,7 +49,13 @@
       <Filter>02.Main</Filter>
     </ClCompile>
     <ClCompile Include="CSVLoader.cpp">
-      <Filter>02.Manager\00.LoadManager\00. Loader\00.CSVLoader</Filter>
+      <Filter>02.Manager\00.LoadManager\00.Loader\00.CSVLoader</Filter>
+    </ClCompile>
+    <ClCompile Include="ConsoleLogger.cpp">
+      <Filter>02.Manager\02.LogManager\00.Logger\00.ConsoleLogger</Filter>
+    </ClCompile>
+    <ClCompile Include="Logger.cpp">
+      <Filter>02.Manager\02.LogManager\00.Logger</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -60,13 +75,22 @@
       <Filter>00.Global\02.Include</Filter>
     </ClInclude>
     <ClInclude Include="Loader.h">
-      <Filter>02.Manager\00.LoadManager\00. Loader</Filter>
+      <Filter>02.Manager\00.LoadManager\00.Loader</Filter>
+    </ClInclude>
+    <ClInclude Include="CSVLoader.h">
+      <Filter>02.Manager\00.LoadManager\00.Loader\00.CSVLoader</Filter>
+    </ClInclude>
+    <ClInclude Include="LogManager.h">
+      <Filter>02.Manager\02.LogManager</Filter>
     </ClInclude>
     <ClInclude Include="ScriptLoadManager.h">
       <Filter>02.Manager\00.LoadManager\01.ScriptLoadManager</Filter>
     </ClInclude>
-    <ClInclude Include="CSVLoader.h">
-      <Filter>02.Manager\00.LoadManager\00. Loader\00.CSVLoader</Filter>
+    <ClInclude Include="Logger.h">
+      <Filter>02.Manager\02.LogManager\00.Logger</Filter>
+    </ClInclude>
+    <ClInclude Include="ConsoleLogger.h">
+      <Filter>02.Manager\02.LogManager\00.Logger\00.ConsoleLogger</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

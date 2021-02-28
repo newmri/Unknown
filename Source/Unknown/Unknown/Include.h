@@ -8,6 +8,7 @@
 #include <thread>
 #include <string>
 #include <string_view>
+#include <sstream>
 
 using namespace std;
 
@@ -16,3 +17,6 @@ using namespace std;
 #include "Loader.h"
 #include "CSVLoader.h"
 #include "ScriptLoadManager.h"
+#include "Logger.h"
+#include "ConsoleLogger.h"
+#include "LogManager.h"
