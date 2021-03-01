@@ -69,6 +69,9 @@
     <ClCompile Include="DummyManager.cpp">
       <Filter>02.Manager\03.DummyManager</Filter>
     </ClCompile>
+    <ClCompile Include="Loader.cpp">
+      <Filter>02.Manager\00.LoadManager\00.Loader</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Obj.h">

@@ -38,7 +38,6 @@ string Logger::MakeLog(const LogType logType, string_view logMessage, string_vie
 	this->stringStream.str(GET_INSTANCE(DummyManager).GetDummyString().data());
 
 	this->stringStream << this->log;
-
 	this->stringStream << logMessage << "\t";
 	this->stringStream << file << "\t";
 	this->stringStream << function << "\t";

@@ -6,7 +6,7 @@ class ScriptLoadManager
 	DECLARE_SINGLETON(ScriptLoadManager<T>)
 
 public:
-	void Load(string_view filePath);
+	LOAD_DATA Load(string_view filePath);
 
 private:
 	unique_ptr<Loader> loader;
@@ -37,7 +37,7 @@ void ScriptLoadManager<T>::Init(void)
 }
 
 template<typename T>
-void ScriptLoadManager<T>::Load(string_view filePath)
+LOAD_DATA ScriptLoadManager<T>::Load(string_view filePath)
 {
-	loader->Load(filePath);
+	return loader->Load(filePath);
 }

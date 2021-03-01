@@ -147,6 +147,7 @@
     <ClCompile Include="ConsoleLogger.cpp" />
     <ClCompile Include="CSVLoader.cpp" />
     <ClCompile Include="DummyManager.cpp" />
+    <ClCompile Include="Loader.cpp" />
     <ClCompile Include="Logger.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="TimeManager.cpp" />
