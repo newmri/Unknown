@@ -24,7 +24,7 @@ void CSVLoader::Load(void)
 
 	size_t newLinePos = 0;
 
-	this->dataNum = 0;
+	this->rowNum = 0;
 
 	while (!this->fileStream.eof())
 	{
@@ -45,7 +45,7 @@ void CSVLoader::Load(void)
 			log = "";
 			log.append(str, newLinePos + 1);
 
-			++this->dataNum;
+			++this->rowNum;
 		}
 
 		else log += str;
@@ -69,5 +69,5 @@ LOAD_DATA CSVLoader::Load(string_view filePath)
 
 	LogLoadingEnd(filePath);
 
-	return make_pair(this->dataNum, this->stringStream.str());
+	return make_pair(this->rowNum, this->stringStream.str());
 }

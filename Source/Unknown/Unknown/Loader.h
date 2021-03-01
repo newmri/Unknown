@@ -17,7 +17,7 @@ protected:
 	void LogLoadingEnd(string_view filePath);
 
 protected:
-	size_t dataNum;
+	size_t rowNum;
 
 private:
 	string logStart, logEnd;
