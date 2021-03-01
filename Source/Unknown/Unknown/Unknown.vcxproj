@@ -134,6 +134,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -145,12 +146,15 @@
   <ItemGroup>
     <ClCompile Include="ConsoleLogger.cpp" />
     <ClCompile Include="CSVLoader.cpp" />
+    <ClCompile Include="DummyManager.cpp" />
     <ClCompile Include="Logger.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="TimeManager.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ConsoleLogger.h" />
     <ClInclude Include="CSVLoader.h" />
+    <ClInclude Include="DummyManager.h" />
     <ClInclude Include="Logger.h" />
     <ClInclude Include="LogManager.h" />
     <ClInclude Include="ScriptLoadManager.h" />
@@ -160,6 +164,7 @@
     <ClInclude Include="Loader.h" />
     <ClInclude Include="Macro.h" />
     <ClInclude Include="Obj.h" />
+    <ClInclude Include="TimeManager.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

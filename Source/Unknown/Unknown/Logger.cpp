@@ -1,37 +1,48 @@
 #include "Global.h"
 
-string Logger::MakeLog(const LogType logType)
+Logger::Logger()
 {
-	string str;
-
-	if (LogType::LOG_INFO == logType)
-		str = "[LOG_INFO]\t";
-
-	else if (LogType::LOG_ERROR == logType)
-		str = "[ERROR]\t";
-
-	return str;
+	Init();
 }
 
-string Logger::MakeLog(const LogType logType, string_view logMessage)
+Logger::~Logger()
 {
-	string log = MakeLog(logType);
 
-	log.append(logMessage);
+}
 
-	return log;
+void Logger::Init()
+{
+	this->log = GET_INSTANCE(DummyManager).GetDummyString();
+}
+
+void Logger::MakeLog(const LogType logType)
+{
+	if (LogType::LOG_INFO == logType)
+		this->log = "[LOG_INFO]\t";
+
+	else if (LogType::LOG_ERROR == logType)
+		this->log = "[ERROR]\t";
+}
+
+void Logger::MakeLog(const LogType logType, string_view logMessage)
+{
+	MakeLog(logType);
+
+	this->log.append(logMessage);
 }
 
 string Logger::MakeLog(const LogType logType, string_view logMessage, string_view file, const char* function, const size_t line)
 {
-	stringstream stringStream;
+	MakeLog(logType, logMessage);
 
-	stringStream << MakeLog(logType);
+	this->stringStream.str(GET_INSTANCE(DummyManager).GetDummyString().data());
 
-	stringStream << logMessage << "\t";
-	stringStream << file << "\t";
-	stringStream << function << "\t";
-	stringStream << line << "\t";
+	this->stringStream << this->log;
 
-	return stringStream.str();
+	this->stringStream << logMessage << "\t";
+	this->stringStream << file << "\t";
+	this->stringStream << function << "\t";
+	this->stringStream << line << "\t";
+
+	return this->stringStream.str();
 }
