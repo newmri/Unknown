@@ -12,7 +12,7 @@ int main(void)
 		GET_INSTANCE(ScriptLoadManager<CSVLoader>).Load(".\\Scripts\\Item\\Item_ItemInfo.csv");
 	}
 
-	catch(exception e)
+	catch (exception e)
 	{
 		GET_INSTANCE(LogManager<ConsoleLogger>).Log(e.what());
 	}

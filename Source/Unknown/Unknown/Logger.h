@@ -29,5 +29,5 @@ protected:
 	string log;
 
 private:
-	stringstream stringStream;
+	ostringstream stringStream;
 };

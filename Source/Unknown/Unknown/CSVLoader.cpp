@@ -12,33 +12,37 @@ CSVLoader::~CSVLoader()
 
 void CSVLoader::Init()
 {
-
+	this->delimiter = ",";
 }
 
 void CSVLoader::Load(void)
 {
-	this->stringStream.str(GET_INSTANCE(DummyManager).GetDummyString().data());
+	this->loadStringStream.str(GET_INSTANCE(DummyManager).GetDummyString().data());
 
 	string str(GET_INSTANCE(DummyManager).GetDummyString().data());
 	string log(GET_INSTANCE(DummyManager).GetDummyString().data());
 
 	size_t newLinePos = 0;
+	size_t spacePos = 0;
 
 	this->rowNum = 0;
 
+	//this->stringStream << this->fileStream.rdbuf();
+
 	while (!this->fileStream.eof())
 	{
-		getline(fileStream, str, ',');
+		getline(fileStream, str, this->delimiter.front());
 
-		str.append(",");
-
-		this->stringStream << str;
+		str.append(this->delimiter);
 
 		newLinePos = str.find('\n');
 
 		if (string::npos != newLinePos)
 		{
 			log.append(str, 0, newLinePos);
+
+			this->loadStringStream << log;
+			this->loadStringStream << "\n,";
 
 			GET_INSTANCE(LogManager<ConsoleLogger>).Log(LogType::LOG_INFO, log);
 
@@ -54,7 +58,7 @@ void CSVLoader::Load(void)
 	this->fileStream.close();
 }
 
-LOAD_DATA CSVLoader::Load(string_view filePath)
+void CSVLoader::Load(string_view filePath)
 {
 	this->fileStream.open(string(filePath).c_str(), ios::in);
 
@@ -67,7 +71,8 @@ LOAD_DATA CSVLoader::Load(string_view filePath)
 
 	Load();
 
+	Parse();
+
 	LogLoadingEnd(filePath);
 
-	return make_pair(this->rowNum, this->stringStream.str());
 }

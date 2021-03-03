@@ -25,3 +25,4 @@ using namespace std;
 #include "LogManager.h"
 #include "TimeManager.h"
 #include "DummyManager.h"
+#include "StringManager.h"

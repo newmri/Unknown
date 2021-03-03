@@ -8,9 +8,8 @@ private:
 	virtual void Load(void) override;
 
 public:
-	virtual LOAD_DATA Load(string_view filePath) override;
+	virtual void Load(string_view filePath) override;
 
 private:
 	fstream fileStream;
-	stringstream stringStream;
 };

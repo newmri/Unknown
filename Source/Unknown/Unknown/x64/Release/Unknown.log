@@ -1,13 +1,7 @@
-﻿  CSVLoader.cpp
-  ConsoleLogger.cpp
-  DummyManager.cpp
-  Loader.cpp
-  Logger.cpp
-  TimeManager.cpp
-  main.cpp
+﻿  Loader.cpp
   Generating code
-  3 of 516 functions ( 0.6%) were compiled, the rest were copied from previous compilation.
+  2 of 551 functions ( 0.4%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
-    0 functions had inline decision re-evaluated but remain unchanged
+    8 functions had inline decision re-evaluated but remain unchanged
   Finished generating code
   Unknown.vcxproj -> C:\Users\newmr\Desktop\Unknown\Source\Unknown\Unknown\../../../bin/Unknown.exe

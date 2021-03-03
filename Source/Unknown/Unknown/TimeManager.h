@@ -17,7 +17,7 @@ public:
 private:
 	TIME_POINT start, end;
 	chrono::duration<double> sec;
-	stringstream message;
+	ostringstream message;
 
 private:
 	time_t now;

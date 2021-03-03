@@ -49,6 +49,9 @@
     <Filter Include="02.Manager\03.DummyManager">
       <UniqueIdentifier>{f50df972-a005-4a97-b91b-77c5df95e32a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="02.Manager\04.StringManager">
+      <UniqueIdentifier>{625151cb-c10a-4b9b-8809-c1ca599cc515}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -71,6 +74,9 @@
     </ClCompile>
     <ClCompile Include="Loader.cpp">
       <Filter>02.Manager\00.LoadManager\00.Loader</Filter>
+    </ClCompile>
+    <ClCompile Include="StringManager.cpp">
+      <Filter>02.Manager\04.StringManager</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -112,6 +118,9 @@
     </ClInclude>
     <ClInclude Include="DummyManager.h">
       <Filter>02.Manager\03.DummyManager</Filter>
+    </ClInclude>
+    <ClInclude Include="StringManager.h">
+      <Filter>02.Manager\04.StringManager</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
