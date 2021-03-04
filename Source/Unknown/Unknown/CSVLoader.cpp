@@ -17,17 +17,17 @@ void CSVLoader::Init()
 
 void CSVLoader::Load(void)
 {
-	this->loadStringStream.str(GET_INSTANCE(DummyManager).GetDummyString().data());
-
 	string str(GET_INSTANCE(DummyManager).GetDummyString().data());
 	string log(GET_INSTANCE(DummyManager).GetDummyString().data());
+	string strForParse(GET_INSTANCE(DummyManager).GetDummyString().data());
 
-	size_t newLinePos = 0;
-	size_t spacePos = 0;
+	string::size_type newLinePos = 0;
 
-	this->rowNum = 0;
+	size_t rows = 0, columns = 0;
 
-	//this->stringStream << this->fileStream.rdbuf();
+	ITEM_INFO itemInfo;
+
+	unique_ptr<string[]> dataTypes;
 
 	while (!this->fileStream.eof())
 	{
@@ -37,19 +37,36 @@ void CSVLoader::Load(void)
 
 		newLinePos = str.find('\n');
 
+		if (0 == rows)
+			++columns;
+
 		if (string::npos != newLinePos)
 		{
+			char* p = (char*)&itemInfo;
+
 			log.append(str, 0, newLinePos);
 
-			this->loadStringStream << log;
-			this->loadStringStream << "\n,";
+			strForParse = log;
+
+			strForParse.append("\n,");
+
+			// 첫번 째 row에는 데이터 타입이 있음
+			if (0 == rows)
+			{
+				Parse(dataTypes, strForParse, columns);
+			}
+
+			else
+			{
+				Parse(strForParse, dataTypes, p, columns);
+			}
 
 			GET_INSTANCE(LogManager<ConsoleLogger>).Log(LogType::LOG_INFO, log);
 
 			log = "";
 			log.append(str, newLinePos + 1);
 
-			++this->rowNum;
+			++rows;
 		}
 
 		else log += str;
@@ -70,8 +87,6 @@ void CSVLoader::Load(string_view filePath)
 	LogLoadingStart(filePath);
 
 	Load();
-
-	Parse();
 
 	LogLoadingEnd(filePath);
 

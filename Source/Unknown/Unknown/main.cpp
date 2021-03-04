@@ -2,7 +2,6 @@
 
 int main(void)
 {
-
 	GET_INSTANCE(TimeManager).Start();
 
 	GET_INSTANCE(LogManager<ConsoleLogger>).Log(LogType::LOG_INFO, "main is running");

@@ -12,6 +12,8 @@
 #include <chrono>
 #include <ctime>
 #include <iomanip>
+#include <map>
+#include <typeinfo>
 
 using namespace std;
 
@@ -26,3 +28,4 @@ using namespace std;
 #include "TimeManager.h"
 #include "DummyManager.h"
 #include "StringManager.h"
+#include "DataTypeManager.h"

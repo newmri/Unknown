@@ -16,7 +16,7 @@ typedef struct
 	string grade;
 	size_t basicAddStatIndex;
 	int basicMulStatIndex;
-	bool isCashItem;
+	int isCashItem;
 	size_t buyPrice, sellPrice;
 	size_t maxStackNum;
 	size_t storage;

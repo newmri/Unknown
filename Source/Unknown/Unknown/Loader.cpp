@@ -19,7 +19,6 @@ void Loader::Init()
 void Loader::LogLoadingStart(string_view filePath)
 {
 	this->logStart = "[";
-
 	this->logStart.append(filePath);
 	this->logStart.append(" is loading...]");
 
@@ -36,49 +35,36 @@ void Loader::LogLoadingEnd(string_view filePath)
 	GET_INSTANCE(LogManager<ConsoleLogger>).Log(LogType::LOG_INFO, this->logEnd);
 }
 
-
-void Loader::Parse(void)
+void Loader::Parse(string& in, unique_ptr<string[]>& dataTypes, char* out, const size_t& columns)
 {
-	this->parseStringStream.str(GET_INSTANCE(DummyManager).GetDummyString().data());
-
-	string str;
-
-	ITEM_INFO itemInfo;
-
-	string strForParse;
-
-	while (getline(this->loadStringStream, str, this->delimiter.front()))
+	for (size_t i = 0; i < columns; ++i)
 	{
-		this->parseStringStream << str << this->delimiter;
+		Parse(in, dataTypes[i], out);
+		out += GET_INSTANCE(DataTypeManager).GetSizeOfType(dataTypes[i]);
+	}
+}
 
-		if (string::npos != str.find('\n'))
-		{
-			strForParse = this->parseStringStream.str();
+void Loader::Parse(string& in, string_view dataType, char* out)
+{
+	if (dataType == GET_INT_NAME)
+	{
+		Parse(in, CHAR_P_TO_INT_REF out);
+	}
 
-			Parse(strForParse, itemInfo.uniqueID);
-			Parse(strForParse, itemInfo.name);
-			Parse(strForParse, itemInfo.type);
-			Parse(strForParse, itemInfo.euipParts);
-			Parse(strForParse, itemInfo.usableMinLevel);
-			Parse(strForParse, itemInfo.usableMaxLevel);
-			Parse(strForParse, itemInfo.job);
-			Parse(strForParse, itemInfo.grade);
-			Parse(strForParse, itemInfo.basicAddStatIndex);
-			Parse(strForParse, itemInfo.basicMulStatIndex);
-			Parse(strForParse, itemInfo.isCashItem);
-			Parse(strForParse, itemInfo.buyPrice);
-			Parse(strForParse, itemInfo.sellPrice);
-			Parse(strForParse, itemInfo.maxStackNum);
-			Parse(strForParse, itemInfo.storage);
+	else if (dataType == GET_SIZE_T_NAME)
+	{
+		Parse(in, CHAR_P_TO_SIZE_T_REF out);
+	}
 
-			this->parseStringStream.str(string());
-		}
+	else if (dataType == GET_STRING_NAME)
+	{
+		Parse(in, CHAR_P_TO_STRING_REF out);
 	}
 }
 
 string Loader::Parse(string& in)
 {
-	string str;
+	string str(GET_INSTANCE(DummyManager).GetDummyString().data());
 	string::size_type findPos = 0;
 
 	findPos = in.find(this->delimiter);
@@ -91,11 +77,6 @@ string Loader::Parse(string& in)
 	in.erase(0, findPos + 1);
 
 	return str;
-}
-
-void Loader::Parse(string& in, bool& out)
-{
-	out = stoi(Parse(in));
 }
 
 void Loader::Parse(string& in, int& out)
@@ -136,6 +117,18 @@ void Loader::Parse(string& in, double& out)
 void Loader::Parse(string& in, long double& out)
 {
 	out = stold(Parse(in));
+}
+
+void Loader::Parse(unique_ptr<string[]>& dataTypes, string& strForParse, const size_t& columns)
+{
+	dataTypes = make_unique<string[]>(columns);
+
+	for (size_t i = 0; i < columns; ++i)
+	{
+		Parse(strForParse, dataTypes[i]);
+	}
+
+	dataTypes[columns - 1] = GET_INSTANCE(StringManager).ReplaceAll(dataTypes[columns - 1], "\n", "");
 }
 
 void Loader::Parse(string& in, string& out)

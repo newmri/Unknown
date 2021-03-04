@@ -13,15 +13,11 @@ public:
 protected:
 	void LogLoadingStart(string_view filePath);
 	void LogLoadingEnd(string_view filePath);
-
-protected:
-	void Parse(void);
+	void Parse(string& in, unique_ptr<string[]>& dataTypes, char* out, const size_t& columns);
+	void Parse(string& in, string_view dataType, char* out);
 
 private:
 	string Parse(string& in);
-
-public:
-	void Parse(string& in, bool& out);
 	void Parse(string& in, int& out);
 	void Parse(string& in, long& out);
 	void Parse(string& in, long long& out);
@@ -30,15 +26,14 @@ public:
 	void Parse(string& in, float& out);
 	void Parse(string& in, double& out);
 	void Parse(string& in, long double& out);
+
+protected:
+	void Parse(unique_ptr<string[]>& dataTypes, string& strForParse, const size_t& columns);
 	void Parse(string& in, string& out);
 
 protected:
-	size_t rowNum;
 	string delimiter;
-	stringstream loadStringStream;
-	ostringstream parseStringStream;
 
 private:
 	string logStart, logEnd;
-
 };
