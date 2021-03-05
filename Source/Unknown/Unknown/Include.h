@@ -29,3 +29,4 @@ using namespace std;
 #include "DummyManager.h"
 #include "StringManager.h"
 #include "DataTypeManager.h"
+#include "HashManager.h"

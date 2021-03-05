@@ -8,7 +8,8 @@ int main(void)
 
 	try
 	{
-		GET_INSTANCE(ScriptLoadManager<CSVLoader>).Load(".\\Scripts\\Item\\Item_ItemInfo.csv");
+		ITEM_INFO table;
+		GET_INSTANCE(ScriptLoadManager<CSVLoader>).Load(".\\Scripts\\Item\\Item_ItemInfo.csv", (char*)&table);
 	}
 
 	catch (exception e)

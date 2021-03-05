@@ -35,7 +35,7 @@ void Loader::LogLoadingEnd(string_view filePath)
 	GET_INSTANCE(LogManager<ConsoleLogger>).Log(LogType::LOG_INFO, this->logEnd);
 }
 
-void Loader::Parse(string& in, unique_ptr<string[]>& dataTypes, char* out, const size_t& columns)
+void Loader::Parse(string& in, unique_ptr<string[]>& dataTypes, const size_t& columns, char* out)
 {
 	for (size_t i = 0; i < columns; ++i)
 	{
@@ -46,19 +46,17 @@ void Loader::Parse(string& in, unique_ptr<string[]>& dataTypes, char* out, const
 
 void Loader::Parse(string& in, string_view dataType, char* out)
 {
-	if (dataType == GET_INT_NAME)
+	switch (HashCode(dataType))
 	{
-		Parse(in, CHAR_P_TO_INT_REF out);
-	}
-
-	else if (dataType == GET_SIZE_T_NAME)
-	{
-		Parse(in, CHAR_P_TO_SIZE_T_REF out);
-	}
-
-	else if (dataType == GET_STRING_NAME)
-	{
-		Parse(in, CHAR_P_TO_STRING_REF out);
+	case HashCode(GET_INT_NAME):
+		Parse(in, CHAR_TO_INT_REF out);
+		break;
+	case HashCode(GET_SIZE_T_NAME):
+		Parse(in, CHAR_TO_SIZE_T_REF out);
+		break;
+	case HashCode(GET_STRING_NAME):
+		Parse(in, CHAR_TO_STRING_REF out);
+		break;
 	}
 }
 
@@ -128,7 +126,9 @@ void Loader::Parse(unique_ptr<string[]>& dataTypes, string& strForParse, const s
 		Parse(strForParse, dataTypes[i]);
 	}
 
-	dataTypes[columns - 1] = GET_INSTANCE(StringManager).ReplaceAll(dataTypes[columns - 1], "\n", "");
+	size_t lastIndex = columns - 1;
+
+	dataTypes[lastIndex] = GET_INSTANCE(StringManager).ReplaceAll(dataTypes[lastIndex], "\n", "");
 }
 
 void Loader::Parse(string& in, string& out)

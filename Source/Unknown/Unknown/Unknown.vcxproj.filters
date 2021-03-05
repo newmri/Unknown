@@ -55,6 +55,9 @@
     <Filter Include="02.Manager\05.DataTypeManager">
       <UniqueIdentifier>{ca157769-2856-429f-a436-58a25be8c34f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="02.Manager\06.HashManager">
+      <UniqueIdentifier>{f93531f0-23c9-435a-a0a8-b9560e7b8cb2}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -83,6 +86,9 @@
     </ClCompile>
     <ClCompile Include="DataTypeManager.cpp">
       <Filter>02.Manager\05.DataTypeManager</Filter>
+    </ClCompile>
+    <ClCompile Include="HashManager.cpp">
+      <Filter>02.Manager\06.HashManager</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -130,6 +136,9 @@
     </ClInclude>
     <ClInclude Include="DataTypeManager.h">
       <Filter>02.Manager\05.DataTypeManager</Filter>
+    </ClInclude>
+    <ClInclude Include="HashManager.h">
+      <Filter>02.Manager\06.HashManager</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

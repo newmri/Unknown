@@ -5,15 +5,15 @@ class Loader : public Obj
 	OVERRIDE_OBJ(Loader)
 
 private:
-	virtual void Load(void) = 0;
+	virtual void Load(char* out) = 0;
 
 public:
-	virtual void Load(string_view filePath) = 0;
+	virtual void Load(string_view filePath, char* out) = 0;
 
 protected:
 	void LogLoadingStart(string_view filePath);
 	void LogLoadingEnd(string_view filePath);
-	void Parse(string& in, unique_ptr<string[]>& dataTypes, char* out, const size_t& columns);
+	void Parse(string& in, unique_ptr<string[]>& dataTypes, const size_t& columns, char* out);
 	void Parse(string& in, string_view dataType, char* out);
 
 private:
