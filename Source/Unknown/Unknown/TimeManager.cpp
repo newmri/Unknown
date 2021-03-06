@@ -6,7 +6,7 @@ void TimeManager::Init(void)
 {
 }
 
-TIME_POINT TimeManager::GetNow(void)
+TIME_POINT TimeManager::GetNow(void) const
 {
 	return chrono::system_clock::now();
 }

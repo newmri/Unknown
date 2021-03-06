@@ -17,15 +17,15 @@ class DataTypeManager
 	DECLARE_SINGLETON(DataTypeManager)
 
 private:
-	size_t GetSizeOfInt(void);
-	size_t GetSizeOfSize_T(void);
-	size_t GetSizeOfString(void);
+	size_t GetSizeOfInt(void) const;
+	size_t GetSizeOfSize_T(void) const;
+	size_t GetSizeOfString(void) const;
 
 public:
-	size_t GetSizeOfType(string_view dataType);
+	size_t GetSizeOfType(string_view dataType) const;
 
 private:
-	typedef size_t(DataTypeManager::* FUNC)();
+	typedef size_t(DataTypeManager::* FUNC)() const;
 	typedef map<string, FUNC> ProcessingMap;
 	ProcessingMap getSizeOfTypeMap;
 };

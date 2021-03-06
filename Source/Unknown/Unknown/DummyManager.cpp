@@ -7,7 +7,7 @@ void DummyManager::Init(void)
 	dummyString = string(DEFAULT_LOG_SIZE, '\0');
 }
 
-string_view DummyManager::GetDummyString(void)
+string_view DummyManager::GetDummyString(void) const
 {
 	return dummyString;
 }

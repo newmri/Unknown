@@ -7,7 +7,7 @@ class TimeManager
 	DECLARE_SINGLETON(TimeManager)
 
 private:
-	TIME_POINT GetNow(void);
+	TIME_POINT GetNow(void) const;
 
 public:
 	void Start(void);
