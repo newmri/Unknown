@@ -14,6 +14,7 @@
 #include <iomanip>
 #include <map>
 #include <typeinfo>
+#include <unordered_map>
 
 using namespace std;
 
@@ -30,3 +31,4 @@ using namespace std;
 #include "StringManager.h"
 #include "DataTypeManager.h"
 #include "HashManager.h"
+#include "ItemManager.h"

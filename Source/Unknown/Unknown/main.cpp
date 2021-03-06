@@ -8,14 +8,14 @@ int main(void)
 
 	try
 	{
-		ITEM_INFO table;
-		GET_INSTANCE(ScriptLoadManager<CSVLoader>).Load(".\\Scripts\\Item\\Item_ItemInfo.csv", (char*)&table);
+		GET_INSTANCE(ItemManager).Load();
 	}
 
 	catch (exception e)
 	{
 		GET_INSTANCE(LogManager<ConsoleLogger>).Log(e.what());
 	}
+
 
 	GET_INSTANCE(TimeManager).End();
 
