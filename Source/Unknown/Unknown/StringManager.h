@@ -1,5 +1,7 @@
 #pragma once
 
+#define STRING_MANAGER GET_INSTANCE(StringManager)
+
 class StringManager
 {
 	DECLARE_SINGLETON(StringManager)

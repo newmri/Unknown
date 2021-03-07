@@ -178,7 +178,7 @@ void Loader::ParseDataTypesAndCalRowSize(string& strForParse)
 
 	size_t lastIndex = this->columns - 1;
 
-	this->dataTypes[lastIndex] = GET_INSTANCE(StringManager).ReplaceAll(this->dataTypes[lastIndex], "\n", "");
+	this->dataTypes[lastIndex] = STRING_MANAGER.ReplaceAll(this->dataTypes[lastIndex], "\n", "");
 
 	this->rowSize = 0;
 
