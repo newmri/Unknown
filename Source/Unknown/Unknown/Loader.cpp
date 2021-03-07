@@ -16,37 +16,86 @@ void Loader::Init()
 	this->logEnd = GET_INSTANCE(DummyManager).GetDummyString();
 }
 
-void Loader::LogLoadingStart(string_view filePath)
+void Loader::PreLoad(string_view filePath, char*& out)
+{
+	this->filePath = filePath;
+	this->dataTypes.reset();
+
+	Open();
+
+	LogLoadingStart();
+}
+
+void Loader::Open()
+{
+	this->fileStream.open(string(this->filePath).c_str(), ios::in);
+
+	if (!this->fileStream.is_open())
+	{
+		throw invalid_argument(GET_INSTANCE(LogManager<ConsoleLogger>).MakeLog(LogType::LOG_ERROR, filePath, __FILE__, __FUNCTION__, __LINE__));
+	}
+}
+
+void Loader::Rewind(void)
+{
+	this->fileStream.seekg(0, std::ios::beg);
+}
+
+void Loader::Close(void)
+{
+	this->fileStream.close();
+}
+
+void Loader::LogLoadingStart(void)
 {
 	this->logStart = "[";
-	this->logStart.append(filePath);
+	this->logStart.append(this->filePath);
 	this->logStart.append(" is loading...]");
 
 	GET_INSTANCE(LogManager<ConsoleLogger>).Log(LogType::LOG_INFO, this->logStart);
 }
 
-void Loader::LogLoadingEnd(string_view filePath)
+void Loader::LogLoadingEnd(void)
 {
 	this->logEnd = "[";
 
-	this->logEnd.append(filePath);
+	this->logEnd.append(this->filePath);
 	this->logEnd.append(" is loaded...]");
 
 	GET_INSTANCE(LogManager<ConsoleLogger>).Log(LogType::LOG_INFO, this->logEnd);
 }
 
-void Loader::Parse(string& in, unique_ptr<string[]>& dataTypes, const size_t& columns, char* out)
+void Loader::Parse(string& in, char* out)
 {
-	for (size_t i = 0; i < columns; ++i)
+	for (size_t i = 0; i < this->columns; ++i)
 	{
-		Parse(in, dataTypes[i], out);
-		out += GET_INSTANCE(DataTypeManager).GetSizeOfType(dataTypes[i]);
+		Parse(in, i, out);
+		out += GET_INSTANCE(DataTypeManager).GetSizeOfType(this->dataTypes[i]);
 	}
 }
 
-void Loader::Parse(string& in, string_view dataType, char* out)
+void Loader::Parse(string& in, const size_t dataTypeIndex, char* out)
 {
-	switch (HashCode(dataType))
+#if _DEBUG
+	unsigned int hashCode = HashCode(this->dataTypes[dataTypeIndex].c_str());
+
+	if (hashCode == HashCode(GET_INT_NAME))
+	{
+		Parse(in, CHAR_TO_INT_REF out);
+	}
+
+	else if (hashCode == HashCode(GET_SIZE_T_NAME))
+	{
+		Parse(in, CHAR_TO_SIZE_T_REF out);
+	}
+
+	else if (hashCode == HashCode(GET_STRING_NAME))
+	{
+		Parse(in, CHAR_TO_STRING_REF out);
+	}
+#else
+
+	switch (HashCode(this->dataTypes[dataTypeIndex].c_str()))
 	{
 	case HashCode(GET_INT_NAME):
 		Parse(in, CHAR_TO_INT_REF out);
@@ -58,6 +107,7 @@ void Loader::Parse(string& in, string_view dataType, char* out)
 		Parse(in, CHAR_TO_STRING_REF out);
 		break;
 	}
+#endif // _DEBUG
 }
 
 string Loader::Parse(string& in)
@@ -117,18 +167,25 @@ void Loader::Parse(string& in, long double& out)
 	out = stold(Parse(in));
 }
 
-void Loader::Parse(unique_ptr<string[]>& dataTypes, string& strForParse, const size_t& columns)
+void Loader::ParseDataTypesAndCalRowSize(string& strForParse)
 {
-	dataTypes = make_unique<string[]>(columns);
+	this->dataTypes = make_unique<string[]>(this->columns);
 
-	for (size_t i = 0; i < columns; ++i)
+	for (size_t i = 0; i < this->columns; ++i)
 	{
-		Parse(strForParse, dataTypes[i]);
+		this->dataTypes[i] = Parse(strForParse);
 	}
 
-	size_t lastIndex = columns - 1;
+	size_t lastIndex = this->columns - 1;
 
-	dataTypes[lastIndex] = GET_INSTANCE(StringManager).ReplaceAll(dataTypes[lastIndex], "\n", "");
+	this->dataTypes[lastIndex] = GET_INSTANCE(StringManager).ReplaceAll(this->dataTypes[lastIndex], "\n", "");
+
+	this->rowSize = 0;
+
+	for (size_t i = 0; i < this->columns; ++i)
+	{
+		this->rowSize += GET_INSTANCE(DataTypeManager).GetSizeOfType(this->dataTypes[i]);
+	}
 }
 
 void Loader::Parse(string& in, string& out)

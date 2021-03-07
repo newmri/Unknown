@@ -8,7 +8,6 @@ class TimeManager
 
 private:
 	TIME_POINT GetNow(void) const;
-
 public:
 	void Start(void);
 	void End(void);
@@ -18,8 +17,12 @@ private:
 	TIME_POINT start, end;
 	chrono::duration<double> sec;
 	ostringstream message;
+	static const int timeBufferSize = 128;
+	char timeBuffer[timeBufferSize];
+	string time;
+	string format = "%F %T";
 
 private:
 	time_t now;
-	tm date;
+	struct tm date;
 };

@@ -4,7 +4,7 @@
 #include "Macro.h"
 #include "Include.h"
 
-// 임시로 여기서 선언
+#pragma pack(push, 1)
 typedef struct
 {
 	size_t uniqueID;
@@ -20,5 +20,5 @@ typedef struct
 	size_t buyPrice, sellPrice;
 	size_t maxStackNum;
 	size_t storage;
-
-}ITEM_INFO;
+} ITEM_INFO;
+#pragma pack(pop)

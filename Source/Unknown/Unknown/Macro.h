@@ -34,12 +34,17 @@
 	public:											\
 		static CLASS& GetInstance(void);			\
 													\
+		friend unique_ptr<CLASS> std::make_unique<CLASS>(); \
+		friend unique_ptr<CLASS>::deleter_type;		\
+													\
+													\
 	private:										\
 		void Init(void);							\
 													\
 	private:										\
 		static unique_ptr<CLASS> instance;			\
 		static once_flag onceFlag;					
+														
 
 #define IMPLEMENT_SINGLETON(CLASS)					\
 	unique_ptr<CLASS> CLASS::instance;				\
@@ -49,7 +54,7 @@
 	{												\
 		call_once(CLASS::onceFlag, []()				\
 		{											\
-			instance.reset(new CLASS);				\
+			instance = make_unique<CLASS>();		\
 			(*(instance.get())).Init();				\
 		});											\
 													\
@@ -57,3 +62,5 @@
 	}												
 
 #define GET_INSTANCE(CLASS) CLASS::GetInstance()	
+
+#define SAFE_DELETE(NUM, PTR) if(PTR) { if(1 < NUM) delete[] PTR; else delete PTR; PTR = nullptr; }

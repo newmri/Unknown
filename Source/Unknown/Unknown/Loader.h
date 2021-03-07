@@ -4,17 +4,23 @@ class Loader : public Obj
 {
 	OVERRIDE_OBJ(Loader)
 
+protected:
+	virtual void PreLoad(string_view filePath, char*& out);
+
 private:
-	virtual void Load(char* out) = 0;
+	virtual void Load(char*& out) = 0;
 
 public:
-	virtual void Load(string_view filePath, char* out) = 0;
+	virtual size_t Load(string_view filePath, char*& out) = 0;
 
 protected:
-	void LogLoadingStart(string_view filePath);
-	void LogLoadingEnd(string_view filePath);
-	void Parse(string& in, unique_ptr<string[]>& dataTypes, const size_t& columns, char* out);
-	void Parse(string& in, string_view dataType, char* out);
+	void Open(void);
+	void Rewind(void);
+	void Close(void);
+	void LogLoadingStart(void);
+	void LogLoadingEnd(void);
+	void Parse(string& in, char* out);
+	void Parse(string& in, const size_t dataTypeIndex, char* out);
 
 private:
 	string Parse(string& in);
@@ -28,12 +34,16 @@ private:
 	void Parse(string& in, long double& out);
 
 protected:
-	void Parse(unique_ptr<string[]>& dataTypes, string& strForParse, const size_t& columns);
+	void ParseDataTypesAndCalRowSize(string& strForParse);
 	void Parse(string& in, string& out);
 
 protected:
 	string delimiter;
-
+	string_view filePath;
+	fstream fileStream;
+	size_t rows = 0, columns = 0;
+	size_t rowSize = 0;
+	unique_ptr<string[]> dataTypes;
 private:
 	string logStart, logEnd;
 };

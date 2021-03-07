@@ -4,6 +4,7 @@ IMPLEMENT_SINGLETON(TimeManager)
 
 void TimeManager::Init(void)
 {
+
 }
 
 TIME_POINT TimeManager::GetNow(void) const
@@ -23,12 +24,10 @@ void TimeManager::End(void)
 
 	this->sec = this->end - this->start;
 
-	this->message.str(GET_INSTANCE(DummyManager).GetDummyString().data());
+	this->time = "Time has been passed (sec)\t";
+	this->time.append(to_string(this->sec.count()));
 
-	this->message << "Time has been passed (sec)\t";
-	this->message << this->sec.count() << endl;
-
-	GET_INSTANCE(LogManager<ConsoleLogger>).Log(LogType::LOG_INFO, this->message.str());
+	GET_INSTANCE(LogManager<ConsoleLogger>).Log(LogType::LOG_INFO, this->time);
 }
 
 string TimeManager::GetTime(void)
@@ -37,9 +36,14 @@ string TimeManager::GetTime(void)
 
 	localtime_s(&this->date, &this->now);
 
-	this->message.str(GET_INSTANCE(DummyManager).GetDummyString().data());
+	strftime(timeBuffer, timeBufferSize, this->format.c_str(), &this->date);
 
-	this->message << put_time(&this->date, "%F %T") << "\t";
+	this->time = timeBuffer;
 
-	return this->message.str();
+	// MDd에서 크래시 발생
+	//this->message.str(GET_INSTANCE(DummyManager).GetDummyString().data());
+	//this->message = put_time(&this->date, format.c_str());
+	//this->message << put_time(&this->date, format.c_str()) << "\t";
+	
+	return this->time;
 }

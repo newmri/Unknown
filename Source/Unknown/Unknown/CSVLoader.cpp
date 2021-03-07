@@ -15,28 +15,26 @@ void CSVLoader::Init()
 	this->delimiter = ",";
 }
 
-void CSVLoader::Load(char* out)
+void CSVLoader::PreLoad(string_view filePath, char*& out)
 {
+	Loader::PreLoad(filePath, out);
+
 	string str(GET_INSTANCE(DummyManager).GetDummyString().data());
 	string log(GET_INSTANCE(DummyManager).GetDummyString().data());
 	string strForParse(GET_INSTANCE(DummyManager).GetDummyString().data());
 
 	string::size_type newLinePos = 0;
 
-	size_t rows = 0, columns = 0;
-
-	unique_ptr<string[]> dataTypes;
-
 	while (!this->fileStream.eof())
 	{
-		getline(fileStream, str, this->delimiter.front());
+		getline(this->fileStream, str, this->delimiter.front());
 
 		str.append(this->delimiter);
 
 		newLinePos = str.find('\n');
 
-		if (0 == rows)
-			++columns;
+		if (0 == this->rows)
+			++this->columns;
 
 		if (string::npos != newLinePos)
 		{
@@ -46,15 +44,9 @@ void CSVLoader::Load(char* out)
 
 			strForParse.append("\n,");
 
-			// 첫번 째 row에는 데이터 타입이 있음
 			if (0 == rows)
 			{
-				Parse(dataTypes, strForParse, columns);
-			}
-
-			else
-			{
-				Parse(strForParse, dataTypes, columns, out);
+				ParseDataTypesAndCalRowSize(strForParse);
 			}
 
 			GET_INSTANCE(LogManager<ConsoleLogger>).Log(LogType::LOG_INFO, log);
@@ -62,28 +54,65 @@ void CSVLoader::Load(char* out)
 			log = "";
 			log.append(str, newLinePos + 1);
 
-			++rows;
+			++this->rows;
 		}
 
 		else log += str;
 	}
 
-	this->fileStream.close();
+	this->rows -= 1;
+
+	out = new char[this->rowSize * (this->rows)]{};
+
+	Rewind();
 }
 
-void CSVLoader::Load(string_view filePath, char* out)
+void CSVLoader::Load(char*& out)
 {
-	this->fileStream.open(string(filePath).c_str(), ios::in);
+	string str(GET_INSTANCE(DummyManager).GetDummyString().data());
+	string strForParse(GET_INSTANCE(DummyManager).GetDummyString().data());
 
-	if (!this->fileStream.is_open())
+	string::size_type newLinePos = 0;
+
+	size_t rows = 0;
+
+	while (!this->fileStream.eof())
 	{
-		throw invalid_argument(GET_INSTANCE(LogManager<ConsoleLogger>).MakeLog(LogType::LOG_ERROR, filePath, __FILE__, __FUNCTION__, __LINE__));
+		getline(this->fileStream, str, this->delimiter.front());
+
+		str.append(this->delimiter);
+
+		newLinePos = str.find('\n');
+
+		if (string::npos != newLinePos)
+		{
+			strForParse.append(str, 0, newLinePos);
+			strForParse.append("\n,");
+
+			if (0 != rows)
+			{
+				Parse(strForParse, out + (this->rowSize * (rows - 1)));
+			}
+
+			strForParse = "";
+			strForParse.append(str, newLinePos + 1);
+
+			++rows;
+		}
+
+		else strForParse += str;
 	}
 
-	LogLoadingStart(filePath);
+	Close();
+}
+
+size_t CSVLoader::Load(string_view filePath, char*& out)
+{
+	PreLoad(filePath, out);
 
 	Load(out);
 
-	LogLoadingEnd(filePath);
+	LogLoadingEnd();
 
+	return this->rows;
 }
