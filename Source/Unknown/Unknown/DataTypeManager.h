@@ -1,5 +1,7 @@
 #pragma once
 
+#define DATA_TYPE_MANAGER GET_INSTANCE(DataTypeManager)
+
 #define GET_INT_NAME "int"
 #define GET_SIZE_T_NAME "size_t"
 #define GET_STRING_NAME "string"

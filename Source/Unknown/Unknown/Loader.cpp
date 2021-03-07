@@ -70,7 +70,7 @@ void Loader::Parse(string& in, char* out)
 	for (size_t i = 0; i < this->columns; ++i)
 	{
 		Parse(in, i, out);
-		out += GET_INSTANCE(DataTypeManager).GetSizeOfType(this->dataTypes[i]);
+		out += DATA_TYPE_MANAGER.GetSizeOfType(this->dataTypes[i]);
 	}
 }
 
@@ -184,7 +184,7 @@ void Loader::ParseDataTypesAndCalRowSize(string& strForParse)
 
 	for (size_t i = 0; i < this->columns; ++i)
 	{
-		this->rowSize += GET_INSTANCE(DataTypeManager).GetSizeOfType(this->dataTypes[i]);
+		this->rowSize += DATA_TYPE_MANAGER.GetSizeOfType(this->dataTypes[i]);
 	}
 }
 
