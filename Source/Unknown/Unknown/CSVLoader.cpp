@@ -19,9 +19,9 @@ void CSVLoader::PreLoad(string_view filePath, char*& out)
 {
 	Loader::PreLoad(filePath, out);
 
-	string str(GET_INSTANCE(DummyManager).GetDummyString().data());
-	string log(GET_INSTANCE(DummyManager).GetDummyString().data());
-	string strForParse(GET_INSTANCE(DummyManager).GetDummyString().data());
+	string str(DUMMY_MANAGER.GetDummyString().data());
+	string log(DUMMY_MANAGER.GetDummyString().data());
+	string strForParse(DUMMY_MANAGER.GetDummyString().data());
 
 	string::size_type newLinePos = 0;
 
@@ -69,8 +69,8 @@ void CSVLoader::PreLoad(string_view filePath, char*& out)
 
 void CSVLoader::Load(char*& out)
 {
-	string str(GET_INSTANCE(DummyManager).GetDummyString().data());
-	string strForParse(GET_INSTANCE(DummyManager).GetDummyString().data());
+	string str(DUMMY_MANAGER.GetDummyString().data());
+	string strForParse(DUMMY_MANAGER.GetDummyString().data());
 
 	string::size_type newLinePos = 0;
 

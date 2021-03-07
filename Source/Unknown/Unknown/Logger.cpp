@@ -12,7 +12,7 @@ Logger::~Logger()
 
 void Logger::Init()
 {
-	this->log = GET_INSTANCE(DummyManager).GetDummyString();
+	this->log = DUMMY_MANAGER.GetDummyString();
 }
 
 void Logger::MakeLog(const LogType logType)
@@ -35,7 +35,7 @@ string Logger::MakeLog(const LogType logType, string_view logMessage, string_vie
 {
 	MakeLog(logType, logMessage);
 
-	this->stringStream.str(GET_INSTANCE(DummyManager).GetDummyString().data());
+	this->stringStream.str(DUMMY_MANAGER.GetDummyString().data());
 
 	this->stringStream << this->log;
 	this->stringStream << logMessage << "\t";

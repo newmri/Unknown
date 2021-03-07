@@ -12,8 +12,8 @@ Loader::~Loader()
 
 void Loader::Init()
 {
-	this->logStart = GET_INSTANCE(DummyManager).GetDummyString();
-	this->logEnd = GET_INSTANCE(DummyManager).GetDummyString();
+	this->logStart = DUMMY_MANAGER.GetDummyString();
+	this->logEnd = DUMMY_MANAGER.GetDummyString();
 }
 
 void Loader::PreLoad(string_view filePath, char*& out)
@@ -112,7 +112,7 @@ void Loader::Parse(string& in, const size_t dataTypeIndex, char* out)
 
 string Loader::Parse(string& in)
 {
-	string str(GET_INSTANCE(DummyManager).GetDummyString().data());
+	string str(DUMMY_MANAGER.GetDummyString().data());
 	string::size_type findPos = 0;
 
 	findPos = in.find(this->delimiter);
