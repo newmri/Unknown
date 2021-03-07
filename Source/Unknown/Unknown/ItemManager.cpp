@@ -11,7 +11,7 @@ void ItemManager::Load(void)
 	char* table = nullptr;
 
 	size_t rows = GET_INSTANCE(ScriptLoadManager<CSVLoader>).Load(".\\Scripts\\Item\\Item_ItemInfo.csv", table);
-	
+
 	ITEM_INFO* pData = reinterpret_cast<ITEM_INFO*>(table);
 
 	for (size_t i = 0; i < rows; ++i)
@@ -19,5 +19,5 @@ void ItemManager::Load(void)
 		cout << pData[i].name << endl;
 	}
 
-	SAFE_DELETE(rows, table);
+	SAFE_DELETE_DTOR(rows, table, pData, ITEM_INFO);
 }
