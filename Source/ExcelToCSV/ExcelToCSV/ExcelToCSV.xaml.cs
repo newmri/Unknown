@@ -93,7 +93,6 @@ namespace ExcelToCSV
             String directory = Path.GetDirectoryName(this.sourceFullPath);
 
             directory += "\\" + Path.GetFileNameWithoutExtension(this.sourceFullPath);
-            directory += destExtention.Replace(".", " ");
             directory += "\\";
 
             DirectoryInfo directoryInfo = new DirectoryInfo(directory);
