@@ -1,5 +1,7 @@
 #pragma once
 
+#define TIME_MANAGER GET_INSTANCE(TimeManager)
+
 using TIME_POINT = chrono::system_clock::time_point;
 
 class TimeManager

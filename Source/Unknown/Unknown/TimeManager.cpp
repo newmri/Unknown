@@ -39,6 +39,7 @@ string TimeManager::GetTime(void)
 	strftime(timeBuffer, timeBufferSize, this->format.c_str(), &this->date);
 
 	this->time = timeBuffer;
+	this->time.append("\t");
 
 	// MDd에서 크래시 발생
 	//this->message.str(DUMMY_MANAGER.GetDummyString().data());
