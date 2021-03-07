@@ -1,5 +1,7 @@
 #pragma once
 
+#define ITEM_MANAGER GET_INSTANCE(ItemManager)
+
 #pragma pack(push, 1)
 typedef struct
 {

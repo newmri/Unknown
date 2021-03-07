@@ -12,7 +12,7 @@ int main(void)
 
 	try
 	{
-		GET_INSTANCE(ItemManager).Load();
+		ITEM_MANAGER.Load();
 	}
 
 	catch (exception e)
