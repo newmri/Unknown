@@ -93,4 +93,11 @@
 		IN_TYPE info = data[i];												\
 		OUT[data[i].KEY] = make_unique<IN_TYPE>(info);						\
 	}																		\
-	SAFE_DELETE_DTOR(ROWS, RAW_PTR, IN_TYPE, data);						
+	SAFE_DELETE_DTOR(ROWS, RAW_PTR, IN_TYPE, data);
+
+#define CSV_LOAD_AND_TO_HAS_MAP(FILE_PATH, IN_TYPE, OUT, KEY)				\
+	{																		\
+		char* table = nullptr;												\
+		size_t rows = CSV_LOAD.Load(FILE_PATH, table);						\
+		RAW_DATA_TO_HASH_MAP(rows, table, IN_TYPE, OUT, KEY);				\
+	}

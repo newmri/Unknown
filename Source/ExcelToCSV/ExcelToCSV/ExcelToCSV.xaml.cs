@@ -102,9 +102,12 @@ namespace ExcelToCSV
 
             this.destFullPath = directory + workSheet.Name + this.destExtention;
 
-            ((Excel.Range)workSheet.Rows[deleteRow, Type.Missing]).Delete(Excel.XlDeleteShiftDirection.xlShiftUp);
+            if (checkDeleteColumnValue == workSheet.Range[checkDeleteColumnCell].Value2.ToString())
+            {
+                workSheet.Columns[deleteColumn].Delete();
+            }
 
-            workSheet.Columns[deleteColumn].Delete();
+            ((Excel.Range)workSheet.Rows[deleteRow, Type.Missing]).Delete(Excel.XlDeleteShiftDirection.xlShiftUp);
 
             workSheet.SaveAs(this.destFullPath, Excel.XlFileFormat.xlCSV);
         }
@@ -168,6 +171,11 @@ namespace ExcelToCSV
         private String doneMessage;
 
         private String deleteColumn = "A";
+        private String checkDeleteColumnCell = "A1";
+        private String checkDeleteColumnValue = "Index";
+
+        private int deleteColumnNum = 0;
+
         private int deleteRow = 1;
 
     }

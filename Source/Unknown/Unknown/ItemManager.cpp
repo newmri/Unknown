@@ -8,10 +8,6 @@ void ItemManager::Init(void)
 
 void ItemManager::Load(void)
 {
-	char* table = nullptr;
-
-	size_t rows = CSV_LOAD.Load(".\\Scripts\\Item\\Item_ItemInfo.csv", table);
-
 	/*
 	// 메모리 정렬
 	size_t size = rows * sizeof(ITEM_INFO);
@@ -26,5 +22,9 @@ void ItemManager::Load(void)
 	ITEM_INFO* pData = new(alignedMemory) ITEM_INFO();
 	*/
 
-	RAW_DATA_TO_HASH_MAP(rows, table, ITEM_INFO, itemInfo, uniqueID);
+
+	CSV_LOAD_AND_TO_HAS_MAP(".\\Scripts\\Item\\Item_ItemInfo.csv", ITEM_INFO, itemInfo, uniqueID);
+	CSV_LOAD_AND_TO_HAS_MAP(".\\Scripts\\Item\\Item_BasicAddStat.csv", ITEM_BASIC_STAT, itemBasicAddStat, index);
+	CSV_LOAD_AND_TO_HAS_MAP(".\\Scripts\\Item\\Item_BasicMulStat.csv", ITEM_BASIC_STAT, itemBasicMulStat, index);
+
 }

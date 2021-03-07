@@ -20,6 +20,9 @@ void Loader::PreLoad(string_view filePath, char*& out)
 {
 	this->filePath = filePath;
 	this->dataTypes.reset();
+	this->rows = 0;
+	this->columns = 0;
+	this->rowSize = 0;
 
 	Open();
 
@@ -84,6 +87,16 @@ void Loader::Parse(string& in, const size_t dataTypeIndex, char* out)
 		Parse(in, CHAR_TO_INT_REF out);
 	}
 
+	else if (hashCode == HashCode(GET_FLOAT_NAME))
+	{
+		Parse(in, CHAR_TO_FLOAT_REF out);
+	}
+
+	else if (hashCode == HashCode(GET_DOUBLE_NAME))
+	{
+		Parse(in, CHAR_TO_DOUBLE_REF out);
+	}
+
 	else if (hashCode == HashCode(GET_SIZE_T_NAME))
 	{
 		Parse(in, CHAR_TO_SIZE_T_REF out);
@@ -94,7 +107,6 @@ void Loader::Parse(string& in, const size_t dataTypeIndex, char* out)
 		Parse(in, CHAR_TO_STRING_REF out);
 	}
 #else
-
 	switch (HashCode(this->dataTypes[dataTypeIndex].c_str()))
 	{
 	case HashCode(GET_INT_NAME):
@@ -102,6 +114,12 @@ void Loader::Parse(string& in, const size_t dataTypeIndex, char* out)
 		break;
 	case HashCode(GET_SIZE_T_NAME):
 		Parse(in, CHAR_TO_SIZE_T_REF out);
+		break;
+	case HashCode(GET_FLOAT_NAME):
+		Parse(in, CHAR_TO_FLOAT_REF out);
+		break;
+	case HashCode(GET_DOUBLE_NAME):
+		Parse(in, CHAR_TO_DOUBLE_REF out);
 		break;
 	case HashCode(GET_STRING_NAME):
 		Parse(in, CHAR_TO_STRING_REF out);
