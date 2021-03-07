@@ -8,7 +8,7 @@ int main(void)
 
 	GET_INSTANCE(TimeManager).Start();
 
-	GET_INSTANCE(LogManager<ConsoleLogger>).Log(LogType::LOG_INFO, "main is running");
+	CONSOLE_LOG.Log(LogType::LOG_INFO, "main is running");
 
 	try
 	{
@@ -17,7 +17,7 @@ int main(void)
 
 	catch (exception e)
 	{
-		GET_INSTANCE(LogManager<ConsoleLogger>).Log(e.what());
+		CONSOLE_LOG.Log(e.what());
 	}
 
 

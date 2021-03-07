@@ -27,7 +27,7 @@ void TimeManager::End(void)
 	this->time = "Time has been passed (sec)\t";
 	this->time.append(to_string(this->sec.count()));
 
-	GET_INSTANCE(LogManager<ConsoleLogger>).Log(LogType::LOG_INFO, this->time);
+	CONSOLE_LOG.Log(LogType::LOG_INFO, this->time);
 }
 
 string TimeManager::GetTime(void)

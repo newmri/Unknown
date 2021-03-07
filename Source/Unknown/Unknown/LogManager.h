@@ -1,5 +1,7 @@
 #pragma once
 
+#define CONSOLE_LOG GET_INSTANCE(LogManager<ConsoleLogger>)
+
 template<typename T>
 class LogManager
 {

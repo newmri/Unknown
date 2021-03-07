@@ -32,7 +32,7 @@ void Loader::Open()
 
 	if (!this->fileStream.is_open())
 	{
-		throw invalid_argument(GET_INSTANCE(LogManager<ConsoleLogger>).MakeLog(LogType::LOG_ERROR, filePath, __FILE__, __FUNCTION__, __LINE__));
+		throw invalid_argument(CONSOLE_LOG.MakeLog(LogType::LOG_ERROR, filePath, __FILE__, __FUNCTION__, __LINE__));
 	}
 }
 
@@ -52,7 +52,7 @@ void Loader::LogLoadingStart(void)
 	this->logStart.append(this->filePath);
 	this->logStart.append(" is loading...]");
 
-	GET_INSTANCE(LogManager<ConsoleLogger>).Log(LogType::LOG_INFO, this->logStart);
+	CONSOLE_LOG.Log(LogType::LOG_INFO, this->logStart);
 }
 
 void Loader::LogLoadingEnd(void)
@@ -62,7 +62,7 @@ void Loader::LogLoadingEnd(void)
 	this->logEnd.append(this->filePath);
 	this->logEnd.append(" is loaded...]");
 
-	GET_INSTANCE(LogManager<ConsoleLogger>).Log(LogType::LOG_INFO, this->logEnd);
+	CONSOLE_LOG.Log(LogType::LOG_INFO, this->logEnd);
 }
 
 void Loader::Parse(string& in, char* out)
