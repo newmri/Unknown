@@ -63,23 +63,34 @@
 
 #define GET_INSTANCE(CLASS) CLASS::GetInstance()	
 
-#define SAFE_DELETE(NUM, PTR)												\
-	if(PTR) { if(1 < NUM) delete[] PTR; else delete PTR; PTR = nullptr; }
+#define SAFE_DELETE(ROWS, PTR)												\
+	if(PTR) { if(1 < ROWS) delete[] PTR; else delete PTR; PTR = nullptr; }
 
-#define SAFE_DELETE_DTOR(NUM, PTR, CLASS_PTR, CLASS)						\
-	if(PTR)																	\
+#define SAFE_DELETE_DTOR(ROWS, RAW_PTR, DATA_TYPE, DATA_PTR)				\
+	if(RAW_PTR)																\
 	{																		\
-		if(1 < NUM)															\
+		if(1 < ROWS)														\
 		{																	\
-			for (size_t i = 0; i < NUM; ++i)								\
-				CLASS_PTR[i].~CLASS();										\
+			for (size_t i = 0; i < ROWS; ++i)								\
+				DATA_PTR[i].~DATA_TYPE();									\
 																			\
-			delete[] PTR;													\
+			delete[] RAW_PTR;												\
 		}																	\
 		else																\
 		{																	\
-			CLASS_PTR->~CLASS();											\
-			delete PTR;														\
+			DATA_PTR->~DATA_TYPE();											\
+			delete RAW_PTR;													\
 		}																	\
-		PTR = nullptr;														\
+		RAW_PTR = nullptr;													\
+		DATA_PTR = nullptr;													\
 	}
+
+#define RAW_DATA_TO_HASH_MAP(ROWS, RAW_PTR, IN_TYPE, OUT, KEY)				\
+	IN_TYPE* data = reinterpret_cast<IN_TYPE*>(RAW_PTR);					\
+																			\
+	for (size_t i = 0; i < ROWS; ++i)										\
+	{																		\
+		IN_TYPE info = data[i];												\
+		OUT[data[i].KEY] = make_unique<IN_TYPE>(info);						\
+	}																		\
+	SAFE_DELETE_DTOR(ROWS, RAW_PTR, IN_TYPE, data);						

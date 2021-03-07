@@ -10,14 +10,21 @@ void ItemManager::Load(void)
 {
 	char* table = nullptr;
 
-	size_t rows = GET_INSTANCE(ScriptLoadManager<CSVLoader>).Load(".\\Scripts\\Item\\Item_ItemInfo.csv", table);
+	size_t rows = CSV_LOAD.Load(".\\Scripts\\Item\\Item_ItemInfo.csv", table);
 
-	ITEM_INFO* pData = reinterpret_cast<ITEM_INFO*>(table);
+	/*
+	// 메모리 정렬
+	size_t size = rows * sizeof(ITEM_INFO);
 
-	for (size_t i = 0; i < rows; ++i)
+	ITEM_INFO* alignedMemory = nullptr;
+
+	if (align(alignof(ITEM_INFO), sizeof(ITEM_INFO), (void*&)table, size))
 	{
-		cout << pData[i].name << endl;
+		alignedMemory = reinterpret_cast<ITEM_INFO*>(table);
 	}
 
-	SAFE_DELETE_DTOR(rows, table, pData, ITEM_INFO);
+	ITEM_INFO* pData = new(alignedMemory) ITEM_INFO();
+	*/
+
+	RAW_DATA_TO_HASH_MAP(rows, table, ITEM_INFO, itemInfo, uniqueID);
 }

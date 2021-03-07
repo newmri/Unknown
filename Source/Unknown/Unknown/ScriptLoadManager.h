@@ -1,5 +1,7 @@
 #pragma once
 
+#define CSV_LOAD GET_INSTANCE(ScriptLoadManager<CSVLoader>)
+
 template<typename T>
 class ScriptLoadManager
 {
