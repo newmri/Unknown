@@ -18,10 +18,10 @@ void Logger::Init()
 void Logger::MakeLog(const LogType logType)
 {
 	if (LogType::LOG_INFO == logType)
-		this->log = "[LOG_INFO]\t";
+		this->log = "[LOG_INFO]" + this->delimiter;
 
 	else if (LogType::LOG_ERROR == logType)
-		this->log = "[ERROR]\t";
+		this->log = "[ERROR]" + this->delimiter;
 }
 
 void Logger::MakeLog(const LogType logType, string_view logMessage)
@@ -38,10 +38,10 @@ string Logger::MakeLog(const LogType logType, string_view logMessage, string_vie
 	this->stringStream.str(DUMMY_MANAGER.GetDummyString().data());
 
 	this->stringStream << this->log;
-	this->stringStream << logMessage << "\t";
-	this->stringStream << file << "\t";
-	this->stringStream << function << "\t";
-	this->stringStream << line << "\t";
+	this->stringStream << logMessage << this->delimiter;
+	this->stringStream << file << this->delimiter;
+	this->stringStream << function << this->delimiter;
+	this->stringStream << line << this->delimiter;
 
 	return this->stringStream.str();
 }

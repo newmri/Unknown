@@ -61,6 +61,9 @@
     <Filter Include="02.Manager\06.ItemManager">
       <UniqueIdentifier>{c9790157-6d6d-4788-92e6-5bc2357c78b5}</UniqueIdentifier>
     </Filter>
+    <Filter Include="02.Manager\01.LogManager\00.Logger\01.FileLogger">
+      <UniqueIdentifier>{0ecf695f-0119-4afd-8d7d-c662c344cfef}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -71,9 +74,6 @@
     </ClCompile>
     <ClCompile Include="ConsoleLogger.cpp">
       <Filter>02.Manager\01.LogManager\00.Logger\00.ConsoleLogger</Filter>
-    </ClCompile>
-    <ClCompile Include="Logger.cpp">
-      <Filter>02.Manager\01.LogManager\00.Logger</Filter>
     </ClCompile>
     <ClCompile Include="TimeManager.cpp">
       <Filter>02.Manager\02.TimeManager</Filter>
@@ -95,6 +95,12 @@
     </ClCompile>
     <ClCompile Include="ItemManager.cpp">
       <Filter>02.Manager\06.ItemManager</Filter>
+    </ClCompile>
+    <ClCompile Include="FileLogger.cpp">
+      <Filter>02.Manager\01.LogManager\00.Logger\01.FileLogger</Filter>
+    </ClCompile>
+    <ClCompile Include="Logger.cpp">
+      <Filter>02.Manager\01.LogManager\00.Logger</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -148,6 +154,9 @@
     </ClInclude>
     <ClInclude Include="ItemManager.h">
       <Filter>02.Manager\06.ItemManager</Filter>
+    </ClInclude>
+    <ClInclude Include="FileLogger.h">
+      <Filter>02.Manager\01.LogManager\00.Logger\01.FileLogger</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

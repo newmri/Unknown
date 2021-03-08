@@ -33,6 +33,7 @@ using namespace std;
 #include "ScriptLoadManager.h"
 #include "Logger.h"
 #include "ConsoleLogger.h"
+#include "FileLogger.h"
 #include "LogManager.h"
 #include "TimeManager.h"
 #include "DummyManager.h"

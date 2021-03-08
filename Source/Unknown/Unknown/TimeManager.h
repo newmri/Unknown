@@ -13,7 +13,9 @@ private:
 public:
 	void Start(void);
 	void End(void);
+	string GetDate(void);
 	string GetTime(void);
+	string GetDateTime(void);
 
 private:
 	TIME_POINT start, end;
@@ -22,7 +24,9 @@ private:
 	static const int timeBufferSize = 128;
 	char timeBuffer[timeBufferSize];
 	string time;
-	string format = "%F %T";
+	string dateFormat = "%F";
+	string timeFormat = "%T";
+	string dateTimeFormat = "%F %T";
 
 private:
 	time_t now;

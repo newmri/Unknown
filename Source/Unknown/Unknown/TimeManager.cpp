@@ -24,10 +24,23 @@ void TimeManager::End(void)
 
 	this->sec = this->end - this->start;
 
-	this->time = "Time has been passed (sec)\t";
+	this->time = "Time has been passed (sec)";
 	this->time.append(to_string(this->sec.count()));
 
 	CONSOLE_LOG.Log(LogType::LOG_INFO, this->time);
+}
+
+string TimeManager::GetDate(void)
+{
+	this->now = chrono::system_clock::to_time_t(GetNow());
+
+	localtime_s(&this->date, &this->now);
+
+	strftime(timeBuffer, timeBufferSize, this->dateFormat.c_str(), &this->date);
+
+	this->time = timeBuffer;
+
+	return this->time;
 }
 
 string TimeManager::GetTime(void)
@@ -36,10 +49,22 @@ string TimeManager::GetTime(void)
 
 	localtime_s(&this->date, &this->now);
 
-	strftime(timeBuffer, timeBufferSize, this->format.c_str(), &this->date);
+	strftime(timeBuffer, timeBufferSize, this->timeFormat.c_str(), &this->date);
 
 	this->time = timeBuffer;
-	this->time.append("\t");
+
+	return this->time;
+}
+
+string TimeManager::GetDateTime(void)
+{
+	this->now = chrono::system_clock::to_time_t(GetNow());
+
+	localtime_s(&this->date, &this->now);
+
+	strftime(timeBuffer, timeBufferSize, this->dateTimeFormat.c_str(), &this->date);
+
+	this->time = timeBuffer;
 
 	// MDd에서 크래시 발생
 	//this->message.str(DUMMY_MANAGER.GetDummyString().data());

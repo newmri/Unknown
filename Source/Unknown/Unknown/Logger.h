@@ -26,6 +26,7 @@ public:
 	virtual void Log(const LogType logType, string_view logMessage) = 0;
 
 protected:
+	string delimiter = "\t";
 	string log;
 
 private:

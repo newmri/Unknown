@@ -157,6 +157,7 @@
     <ClCompile Include="CSVLoader.cpp" />
     <ClCompile Include="DataTypeManager.cpp" />
     <ClCompile Include="DummyManager.cpp" />
+    <ClCompile Include="FileLogger.cpp" />
     <ClCompile Include="HashManager.cpp" />
     <ClCompile Include="ItemManager.cpp" />
     <ClCompile Include="Loader.cpp" />
@@ -170,6 +171,7 @@
     <ClInclude Include="CSVLoader.h" />
     <ClInclude Include="DataTypeManager.h" />
     <ClInclude Include="DummyManager.h" />
+    <ClInclude Include="FileLogger.h" />
     <ClInclude Include="HashManager.h" />
     <ClInclude Include="ItemManager.h" />
     <ClInclude Include="Logger.h" />

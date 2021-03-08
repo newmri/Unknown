@@ -9,7 +9,7 @@ int main(void)
 	TIME_MANAGER.Start();
 
 	CONSOLE_LOG.Log(LogType::LOG_INFO, "main is running");
-
+	FILE_LOG.Log(LogType::LOG_INFO, "main is running");
 	try
 	{
 		ITEM_MANAGER.Load();
