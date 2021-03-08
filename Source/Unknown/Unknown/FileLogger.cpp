@@ -17,6 +17,8 @@ void FileLogger::MakeFullPath(void)
 
 void FileLogger::Init()
 {
+    _mkdir(filePath.c_str());
+
     MakeFullPath();
 }
 
