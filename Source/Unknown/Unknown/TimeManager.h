@@ -10,9 +10,15 @@ class TimeManager
 
 private:
 	TIME_POINT GetNow(void) const;
+
 public:
 	void Start(void);
 	void End(void);
+
+private:
+	void GetTime(string_view format);
+
+public:
 	string GetDate(void);
 	string GetTime(void);
 	string GetDateTime(void);
@@ -20,7 +26,7 @@ public:
 private:
 	TIME_POINT start, end;
 	chrono::duration<double> sec;
-	ostringstream message;
+	string timeEndMessage = "Time has been passed (sec)";
 	static const int timeBufferSize = 128;
 	char timeBuffer[timeBufferSize];
 	string time;

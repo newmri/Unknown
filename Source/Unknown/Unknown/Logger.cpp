@@ -17,17 +17,12 @@ void Logger::Init()
 
 void Logger::MakeLog(const LogType logType)
 {
-	if (LogType::LOG_INFO == logType)
-		this->log = "[LOG_INFO]" + this->delimiter;
-
-	else if (LogType::LOG_ERROR == logType)
-		this->log = "[ERROR]" + this->delimiter;
+	this->log = this->logHeader[static_cast<size_t>(logType)] + this->delimiter;
 }
 
 void Logger::MakeLog(const LogType logType, string_view logMessage)
 {
 	MakeLog(logType);
-
 	this->log.append(logMessage);
 }
 
@@ -35,13 +30,13 @@ string Logger::MakeLog(const LogType logType, string_view logMessage, string_vie
 {
 	MakeLog(logType, logMessage);
 
-	this->stringStream.str(DUMMY_MANAGER.GetDummyString().data());
+	this->output.str(DUMMY_MANAGER.GetDummyString().data());
 
-	this->stringStream << this->log;
-	this->stringStream << logMessage << this->delimiter;
-	this->stringStream << file << this->delimiter;
-	this->stringStream << function << this->delimiter;
-	this->stringStream << line << this->delimiter;
+	this->output << this->log;
+	this->output << logMessage << this->delimiter;
+	this->output << file << this->delimiter;
+	this->output << function << this->delimiter;
+	this->output << line << this->delimiter;
 
-	return this->stringStream.str();
+	return this->output.str();
 }

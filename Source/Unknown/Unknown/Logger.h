@@ -1,9 +1,10 @@
 #pragma once
 
-enum class LogType
+enum class LogType : size_t
 {
 	LOG_INFO,
-	LOG_ERROR
+	LOG_ERROR,
+	LOG_TYPE_NUM
 };
 
 static constexpr size_t DEFAULT_LOG_SIZE = 1024;
@@ -30,5 +31,7 @@ protected:
 	string log;
 
 private:
-	ostringstream stringStream;
+	string logHeader[static_cast<size_t>(LogType::LOG_TYPE_NUM)] = { "[LOG_INFO]", "[LOG_ERROR]" };
+
+	ostringstream output;
 };
