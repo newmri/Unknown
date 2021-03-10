@@ -3,6 +3,16 @@
 #define CONSOLE_LOG GET_INSTANCE(LogManager<ConsoleLogger>)
 #define FILE_LOG GET_INSTANCE(LogManager<FileLogger>)
 
+#define ALL_LOG(LOG_TYPE, LOG_MESSAGE) \
+	CONSOLE_LOG.Log(LOG_TYPE, LOG_MESSAGE); \
+	FILE_LOG.Log(LOG_TYPE, LOG_MESSAGE);
+
+#if _DEBUG
+	#define LOG CONSOLE_LOG
+#else
+	#define LOG FILE_LOG
+#endif // _DEBUG
+
 template<typename T>
 class LogManager
 {

@@ -38,7 +38,7 @@ void FileLogger::UpdateFile(void)
 
         if (!this->output.is_open())
         {
-            throw runtime_error(CONSOLE_LOG.MakeLog(LogType::LOG_ERROR, this->currFullPath, __FILE__, __FUNCTION__, __LINE__));
+            throw runtime_error(LOG.MakeLog(LogType::LOG_ERROR, this->currFullPath, __FILE__, __FUNCTION__, __LINE__));
         }
     }
 }

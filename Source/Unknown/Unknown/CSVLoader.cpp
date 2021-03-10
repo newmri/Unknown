@@ -49,7 +49,7 @@ void CSVLoader::PreLoad(string_view filePath, char*& out)
 				ParseDataTypesAndCalRowSize(strForParse);
 			}
 
-			CONSOLE_LOG.Log(LogType::LOG_INFO, log);
+			LOG.Log(LogType::LOG_INFO, log);
 
 			log = "";
 			log.append(str, newLinePos + 1);

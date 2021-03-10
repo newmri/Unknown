@@ -25,7 +25,7 @@ void TimeManager::End(void)
 
 	this->time = timeEndMessage + to_string(this->sec.count());
 
-	CONSOLE_LOG.Log(LogType::LOG_INFO, this->time);
+	LOG.Log(LogType::LOG_INFO, this->time);
 }
 
 void TimeManager::GetTime(string_view format)

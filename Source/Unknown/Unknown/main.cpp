@@ -8,8 +8,8 @@ int main(void)
 
 	TIME_MANAGER.Start();
 
-	CONSOLE_LOG.Log(LogType::LOG_INFO, "main is running");
-	FILE_LOG.Log(LogType::LOG_INFO, "main is running");
+	ALL_LOG(LogType::LOG_INFO, "main is running");
+
 	try
 	{
 		ITEM_MANAGER.Load();
@@ -17,7 +17,7 @@ int main(void)
 
 	catch (exception e)
 	{
-		CONSOLE_LOG.Log(e.what());
+		LOG.Log(e.what());
 	}
 
 	TIME_MANAGER.End();
