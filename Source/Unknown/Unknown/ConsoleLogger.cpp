@@ -10,7 +10,7 @@ ConsoleLogger::~ConsoleLogger()
 
 }
 
-void ConsoleLogger::Init()
+void ConsoleLogger::Init(void)
 {
 	
 }

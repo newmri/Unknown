@@ -15,7 +15,7 @@ void FileLogger::MakeFullPath(void)
     this->currFullPath = this->filePath + TIME_MANAGER.GetDate() + this->fileExtension;
 }
 
-void FileLogger::Init()
+void FileLogger::Init(void)
 {
     _mkdir(filePath.c_str());
     MakeFullPath();

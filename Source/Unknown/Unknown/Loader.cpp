@@ -10,7 +10,7 @@ Loader::~Loader()
 
 }
 
-void Loader::Init()
+void Loader::Init(void)
 {
 	this->logStart = DUMMY_MANAGER.GetDummyString();
 	this->logEnd = DUMMY_MANAGER.GetDummyString();

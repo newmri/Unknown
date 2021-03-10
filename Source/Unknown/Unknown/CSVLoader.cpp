@@ -10,7 +10,7 @@ CSVLoader::~CSVLoader()
 
 }
 
-void CSVLoader::Init()
+void CSVLoader::Init(void)
 {
 	this->delimiter = ",";
 }

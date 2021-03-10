@@ -10,7 +10,7 @@ Logger::~Logger()
 
 }
 
-void Logger::Init()
+void Logger::Init(void)
 {
 	this->log = DUMMY_MANAGER.GetDummyString();
 }
