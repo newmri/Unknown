@@ -160,6 +160,7 @@
     <ClCompile Include="FileLogger.cpp" />
     <ClCompile Include="HashManager.cpp" />
     <ClCompile Include="ItemManager.cpp" />
+    <ClCompile Include="Item.cpp" />
     <ClCompile Include="Loader.cpp" />
     <ClCompile Include="Logger.cpp" />
     <ClCompile Include="main.cpp" />
@@ -173,7 +174,9 @@
     <ClInclude Include="DummyManager.h" />
     <ClInclude Include="FileLogger.h" />
     <ClInclude Include="HashManager.h" />
+    <ClInclude Include="ItemInfo.h" />
     <ClInclude Include="ItemManager.h" />
+    <ClInclude Include="Item.h" />
     <ClInclude Include="Logger.h" />
     <ClInclude Include="LogManager.h" />
     <ClInclude Include="ScriptLoadManager.h" />

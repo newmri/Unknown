@@ -20,6 +20,14 @@
 	private:																\
 		virtual void Init(void) override;									
 
+#define OVERRIDE_OBJ_DELETE_DEFAULT_CONSTRUCTOR(CLASS)						\
+	public:																	\
+		CLASS() = delete;													\
+		virtual ~CLASS() override;											\
+																			\
+	private:																\
+		virtual void Init(void) override;									
+
 #define NO_COPY(CLASS)														\
 	private:																\
 		CLASS()				= default;										\

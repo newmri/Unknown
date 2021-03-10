@@ -42,3 +42,5 @@ using namespace std;
 #include "DataTypeManager.h"
 #include "HashManager.h"
 #include "ItemManager.h"
+#include "ItemInfo.h"
+#include "Item.h"
