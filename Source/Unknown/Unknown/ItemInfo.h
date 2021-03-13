@@ -11,6 +11,7 @@ typedef struct
 	size_t usableMinLevel, usableMaxLevel;
 	string job;
 	string grade;
+	size_t limitTime;
 	size_t basicAddStatIndex;
 	int basicMulStatIndex;
 	int isCashItem;

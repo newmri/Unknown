@@ -24,23 +24,18 @@
 #include <typeinfo>
 #include <unordered_map>
 #include <direct.h>
+#include <optional>
 
 using namespace std;
 
 #include "Macro.h"
 #include "Obj.h"
-#include "Loader.h"
-#include "CSVLoader.h"
-#include "ScriptLoadManager.h"
-#include "Logger.h"
-#include "ConsoleLogger.h"
-#include "FileLogger.h"
-#include "LogManager.h"
+#include "LoadInclude.h"
+#include "LogInclude.h"
 #include "TimeManager.h"
 #include "DummyManager.h"
 #include "StringManager.h"
 #include "DataTypeManager.h"
 #include "HashManager.h"
-#include "ItemManager.h"
-#include "ItemInfo.h"
-#include "Item.h"
+#include "ItemInclude.h"
+#include "InterfaceInclude.h"

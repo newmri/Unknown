@@ -166,6 +166,7 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="StringManager.cpp" />
     <ClCompile Include="TimeManager.cpp" />
+    <ClCompile Include="UsableItem.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ConsoleLogger.h" />
@@ -174,10 +175,14 @@
     <ClInclude Include="DummyManager.h" />
     <ClInclude Include="FileLogger.h" />
     <ClInclude Include="HashManager.h" />
+    <ClInclude Include="InterfaceInclude.h" />
+    <ClInclude Include="ItemInclude.h" />
     <ClInclude Include="ItemInfo.h" />
     <ClInclude Include="ItemManager.h" />
     <ClInclude Include="Item.h" />
+    <ClInclude Include="LoadInclude.h" />
     <ClInclude Include="Logger.h" />
+    <ClInclude Include="LogInclude.h" />
     <ClInclude Include="LogManager.h" />
     <ClInclude Include="ScriptLoadManager.h" />
     <ClInclude Include="Define.h" />
@@ -188,6 +193,8 @@
     <ClInclude Include="Obj.h" />
     <ClInclude Include="StringManager.h" />
     <ClInclude Include="TimeManager.h" />
+    <ClInclude Include="UsableItem.h" />
+    <ClInclude Include="Use.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

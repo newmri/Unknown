@@ -28,3 +28,17 @@ void ItemManager::Load(void)
 	CSV_LOAD_AND_TO_HAS_MAP(".\\Scripts\\Item\\Item_BasicMulStat.csv", ITEM_BASIC_STAT, itemBasicMulStat, index);
 
 }
+
+optional<unique_ptr<Item>> ItemManager::CreateItem(const size_t uniqueID, const size_t count)
+{
+	//auto iter = itemInfo.find(uniqueID);
+
+	//if (iter != itemInfo.end())
+	//{
+	//	unique_ptr<Item> derived = make_unique<Item>(uniqueID, count, 0);
+
+	//	return move(derived);
+	//}
+
+	return nullopt;
+}
