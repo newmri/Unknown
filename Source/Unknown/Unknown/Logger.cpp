@@ -33,7 +33,6 @@ string Logger::MakeLog(const LogType logType, string_view logMessage, string_vie
 	this->output.str(DUMMY_MANAGER.GetDummyString().data());
 
 	this->output << this->log;
-	this->output << logMessage << this->delimiter;
 	this->output << file << this->delimiter;
 	this->output << function << this->delimiter;
 	this->output << line << this->delimiter;
