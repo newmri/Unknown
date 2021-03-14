@@ -29,16 +29,17 @@ void ItemManager::Load(void)
 
 }
 
-optional<unique_ptr<Item>> ItemManager::CreateItem(const size_t uniqueID, const size_t count)
+optional<unique_ptr<Item>> ItemManager::CreateItem(const CREATURE_INFO& owner, const size_t uniqueID, const size_t count)
 {
-	//auto iter = itemInfo.find(uniqueID);
+	auto iter = itemInfo.find(uniqueID);
 
-	//if (iter != itemInfo.end())
-	//{
-	//	unique_ptr<Item> derived = make_unique<Item>(uniqueID, count, 0);
+	if (iter != itemInfo.end())
+	{
+		unique_ptr<Item> item = make_unique<UsableItem>(owner, uniqueID, count, 0);
+		return move(item);
+	}
 
-	//	return move(derived);
-	//}
+	LOG.Log(LOG.MakeLog(LogType::LOG_ERROR, uniqueIDError + to_string(uniqueID) + " \t", __FILE__, __FUNCTION__, __LINE__));
 
 	return nullopt;
 }

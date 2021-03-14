@@ -3,5 +3,5 @@
 class IUse
 {
 public:
-	virtual void Use(void) = 0;
+	virtual void Use(const CREATURE_INFO& target) = 0;
 };

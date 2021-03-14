@@ -1,12 +1,13 @@
 #pragma once
 
-class Item : Obj
+class Item : public Obj
 {
-	ABSTRACT_OBJ(Item)
+	OVERRIDE_OBJ_DELETE_DEFAULT_CONSTRUCTOR(Item)
 
 public:
-	Item(const size_t uniqueID, const size_t count, const size_t limitTime);
+	Item(const CREATURE_INFO& owner, const size_t uniqueID, const size_t count, const size_t limitTime);
 
 protected:
+	CREATURE_INFO owner;
 	size_t uniqueID, count, limitTime;
 };

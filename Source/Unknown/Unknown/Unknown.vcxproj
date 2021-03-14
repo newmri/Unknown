@@ -154,6 +154,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="ConsoleLogger.cpp" />
+    <ClCompile Include="Creature.cpp" />
     <ClCompile Include="CSVLoader.cpp" />
     <ClCompile Include="DataTypeManager.cpp" />
     <ClCompile Include="DummyManager.cpp" />
@@ -164,12 +165,14 @@
     <ClCompile Include="Loader.cpp" />
     <ClCompile Include="Logger.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Player.cpp" />
     <ClCompile Include="StringManager.cpp" />
     <ClCompile Include="TimeManager.cpp" />
     <ClCompile Include="UsableItem.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ConsoleLogger.h" />
+    <ClInclude Include="Creature.h" />
     <ClInclude Include="CSVLoader.h" />
     <ClInclude Include="DataTypeManager.h" />
     <ClInclude Include="DummyManager.h" />
@@ -184,6 +187,8 @@
     <ClInclude Include="Logger.h" />
     <ClInclude Include="LogInclude.h" />
     <ClInclude Include="LogManager.h" />
+    <ClInclude Include="ObjInclude.h" />
+    <ClInclude Include="Player.h" />
     <ClInclude Include="ScriptLoadManager.h" />
     <ClInclude Include="Define.h" />
     <ClInclude Include="Global.h" />

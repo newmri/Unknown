@@ -16,62 +16,8 @@
     <Filter Include="00.Global\02.Include">
       <UniqueIdentifier>{1bea0d7f-7aa8-4184-8d2f-57860bddf58e}</UniqueIdentifier>
     </Filter>
-    <Filter Include="02.Manager">
-      <UniqueIdentifier>{79899359-6d5c-433f-8095-496b01fe1d3f}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="02.Manager\00.LoadManager">
-      <UniqueIdentifier>{495914e1-7ae1-423c-94a3-0b94b1b4d6de}</UniqueIdentifier>
-    </Filter>
     <Filter Include="01.Obj">
       <UniqueIdentifier>{dc8e4668-571e-4317-8916-641a98d008fc}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="02.Manager\00.LoadManager\01.ScriptLoadManager">
-      <UniqueIdentifier>{60c98f60-a0ae-45c1-b6ef-c8dd4e0c22ef}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="02.Manager\00.LoadManager\00.Loader">
-      <UniqueIdentifier>{769cdd4a-0497-4691-883a-e9290de2c093}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="02.Manager\00.LoadManager\00.Loader\00.CSVLoader">
-      <UniqueIdentifier>{3e497bef-7fc7-42f5-b0e7-8362e1eb7724}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="02.Manager\01.LogManager">
-      <UniqueIdentifier>{417b90a5-3895-48a4-b998-ab990b61f8fd}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="02.Manager\01.LogManager\00.Logger">
-      <UniqueIdentifier>{f5fd0fe8-a61f-45bd-a8ce-146bc4f2fd74}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="02.Manager\01.LogManager\00.Logger\00.ConsoleLogger">
-      <UniqueIdentifier>{deed788e-51e5-44a3-837c-4ce47c6185c6}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="02.Manager\02.TimeManager">
-      <UniqueIdentifier>{2718bb03-1139-4a45-bc69-7a54f8dda7be}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="02.Manager\03.DummyManager">
-      <UniqueIdentifier>{f50df972-a005-4a97-b91b-77c5df95e32a}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="02.Manager\04.StringManager">
-      <UniqueIdentifier>{625151cb-c10a-4b9b-8809-c1ca599cc515}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="02.Manager\05.DataTypeManager">
-      <UniqueIdentifier>{ca157769-2856-429f-a436-58a25be8c34f}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="02.Manager\06.HashManager">
-      <UniqueIdentifier>{f93531f0-23c9-435a-a0a8-b9560e7b8cb2}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="02.Manager\01.LogManager\00.Logger\01.FileLogger">
-      <UniqueIdentifier>{0ecf695f-0119-4afd-8d7d-c662c344cfef}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="02.Manager\07.ItemManager">
-      <UniqueIdentifier>{c9790157-6d6d-4788-92e6-5bc2357c78b5}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="02.Manager\07.ItemManager\00.ItemInfo">
-      <UniqueIdentifier>{5124d0be-23b9-435d-be58-ab723be4682e}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="02.Manager\07.ItemManager\01.Item">
-      <UniqueIdentifier>{332299ab-2b86-4e96-9a31-34c3d8424966}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="02.Manager\07.ItemManager\01.Item\00.UsableItem">
-      <UniqueIdentifier>{4abc2923-62a4-47ef-bb19-4266ba745e26}</UniqueIdentifier>
     </Filter>
     <Filter Include="00.Global\03.Interface">
       <UniqueIdentifier>{26c98600-1e54-4842-be72-b3d79dea6257}</UniqueIdentifier>
@@ -79,49 +25,118 @@
     <Filter Include="00.Global\03.Interface\00.Use">
       <UniqueIdentifier>{ce44c016-0de3-4aea-8155-4ed11742f129}</UniqueIdentifier>
     </Filter>
+    <Filter Include="03.Manager">
+      <UniqueIdentifier>{79899359-6d5c-433f-8095-496b01fe1d3f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03.Manager\00.LoadManager">
+      <UniqueIdentifier>{495914e1-7ae1-423c-94a3-0b94b1b4d6de}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03.Manager\00.LoadManager\01.ScriptLoadManager">
+      <UniqueIdentifier>{60c98f60-a0ae-45c1-b6ef-c8dd4e0c22ef}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03.Manager\00.LoadManager\00.Loader">
+      <UniqueIdentifier>{769cdd4a-0497-4691-883a-e9290de2c093}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03.Manager\00.LoadManager\00.Loader\00.CSVLoader">
+      <UniqueIdentifier>{3e497bef-7fc7-42f5-b0e7-8362e1eb7724}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03.Manager\01.LogManager">
+      <UniqueIdentifier>{417b90a5-3895-48a4-b998-ab990b61f8fd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03.Manager\01.LogManager\00.Logger">
+      <UniqueIdentifier>{f5fd0fe8-a61f-45bd-a8ce-146bc4f2fd74}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03.Manager\01.LogManager\00.Logger\00.ConsoleLogger">
+      <UniqueIdentifier>{deed788e-51e5-44a3-837c-4ce47c6185c6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03.Manager\01.LogManager\00.Logger\01.FileLogger">
+      <UniqueIdentifier>{0ecf695f-0119-4afd-8d7d-c662c344cfef}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03.Manager\02.TimeManager">
+      <UniqueIdentifier>{2718bb03-1139-4a45-bc69-7a54f8dda7be}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03.Manager\03.DummyManager">
+      <UniqueIdentifier>{f50df972-a005-4a97-b91b-77c5df95e32a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03.Manager\04.StringManager">
+      <UniqueIdentifier>{625151cb-c10a-4b9b-8809-c1ca599cc515}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03.Manager\05.DataTypeManager">
+      <UniqueIdentifier>{ca157769-2856-429f-a436-58a25be8c34f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03.Manager\06.HashManager">
+      <UniqueIdentifier>{f93531f0-23c9-435a-a0a8-b9560e7b8cb2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03.Manager\07.ItemManager">
+      <UniqueIdentifier>{c9790157-6d6d-4788-92e6-5bc2357c78b5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03.Manager\07.ItemManager\00.ItemInfo">
+      <UniqueIdentifier>{5124d0be-23b9-435d-be58-ab723be4682e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03.Manager\07.ItemManager\01.Item">
+      <UniqueIdentifier>{332299ab-2b86-4e96-9a31-34c3d8424966}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03.Manager\07.ItemManager\01.Item\00.UsableItem">
+      <UniqueIdentifier>{4abc2923-62a4-47ef-bb19-4266ba745e26}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03.Manager\07.ItemManager\01.Item\01.EquipItem">
+      <UniqueIdentifier>{357bbc38-f1d5-47d8-bc2a-a23c4b652b51}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01.Obj\00.Player">
+      <UniqueIdentifier>{b4118f48-aa6f-4f62-a785-afb08505df35}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01.Obj\00.Creature">
+      <UniqueIdentifier>{85d87240-b231-41be-b555-d5e256c7c812}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>02.Main</Filter>
     </ClCompile>
     <ClCompile Include="CSVLoader.cpp">
-      <Filter>02.Manager\00.LoadManager\00.Loader\00.CSVLoader</Filter>
+      <Filter>03.Manager\00.LoadManager\00.Loader\00.CSVLoader</Filter>
     </ClCompile>
     <ClCompile Include="ConsoleLogger.cpp">
-      <Filter>02.Manager\01.LogManager\00.Logger\00.ConsoleLogger</Filter>
+      <Filter>03.Manager\01.LogManager\00.Logger\00.ConsoleLogger</Filter>
     </ClCompile>
     <ClCompile Include="TimeManager.cpp">
-      <Filter>02.Manager\02.TimeManager</Filter>
+      <Filter>03.Manager\02.TimeManager</Filter>
     </ClCompile>
     <ClCompile Include="DummyManager.cpp">
-      <Filter>02.Manager\03.DummyManager</Filter>
+      <Filter>03.Manager\03.DummyManager</Filter>
     </ClCompile>
     <ClCompile Include="Loader.cpp">
-      <Filter>02.Manager\00.LoadManager\00.Loader</Filter>
+      <Filter>03.Manager\00.LoadManager\00.Loader</Filter>
     </ClCompile>
     <ClCompile Include="StringManager.cpp">
-      <Filter>02.Manager\04.StringManager</Filter>
+      <Filter>03.Manager\04.StringManager</Filter>
     </ClCompile>
     <ClCompile Include="DataTypeManager.cpp">
-      <Filter>02.Manager\05.DataTypeManager</Filter>
+      <Filter>03.Manager\05.DataTypeManager</Filter>
     </ClCompile>
     <ClCompile Include="HashManager.cpp">
-      <Filter>02.Manager\06.HashManager</Filter>
+      <Filter>03.Manager\06.HashManager</Filter>
     </ClCompile>
     <ClCompile Include="ItemManager.cpp">
-      <Filter>02.Manager\07.ItemManager</Filter>
+      <Filter>03.Manager\07.ItemManager</Filter>
     </ClCompile>
     <ClCompile Include="FileLogger.cpp">
-      <Filter>02.Manager\01.LogManager\00.Logger\01.FileLogger</Filter>
+      <Filter>03.Manager\01.LogManager\00.Logger\01.FileLogger</Filter>
     </ClCompile>
     <ClCompile Include="Logger.cpp">
-      <Filter>02.Manager\01.LogManager\00.Logger</Filter>
+      <Filter>03.Manager\01.LogManager\00.Logger</Filter>
     </ClCompile>
     <ClCompile Include="Item.cpp">
-      <Filter>02.Manager\07.ItemManager\01.Item</Filter>
+      <Filter>03.Manager\07.ItemManager\01.Item</Filter>
     </ClCompile>
     <ClCompile Include="UsableItem.cpp">
-      <Filter>02.Manager\07.ItemManager\01.Item\00.UsableItem</Filter>
+      <Filter>03.Manager\07.ItemManager\01.Item\00.UsableItem</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>01.Obj\00.Player</Filter>
+    </ClCompile>
+    <ClCompile Include="Creature.cpp">
+      <Filter>01.Obj\00.Creature</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -141,52 +156,52 @@
       <Filter>00.Global\02.Include</Filter>
     </ClInclude>
     <ClInclude Include="Loader.h">
-      <Filter>02.Manager\00.LoadManager\00.Loader</Filter>
+      <Filter>03.Manager\00.LoadManager\00.Loader</Filter>
     </ClInclude>
     <ClInclude Include="CSVLoader.h">
-      <Filter>02.Manager\00.LoadManager\00.Loader\00.CSVLoader</Filter>
+      <Filter>03.Manager\00.LoadManager\00.Loader\00.CSVLoader</Filter>
     </ClInclude>
     <ClInclude Include="LogManager.h">
-      <Filter>02.Manager\01.LogManager</Filter>
+      <Filter>03.Manager\01.LogManager</Filter>
     </ClInclude>
     <ClInclude Include="ScriptLoadManager.h">
-      <Filter>02.Manager\00.LoadManager\01.ScriptLoadManager</Filter>
+      <Filter>03.Manager\00.LoadManager\01.ScriptLoadManager</Filter>
     </ClInclude>
     <ClInclude Include="Logger.h">
-      <Filter>02.Manager\01.LogManager\00.Logger</Filter>
+      <Filter>03.Manager\01.LogManager\00.Logger</Filter>
     </ClInclude>
     <ClInclude Include="ConsoleLogger.h">
-      <Filter>02.Manager\01.LogManager\00.Logger\00.ConsoleLogger</Filter>
+      <Filter>03.Manager\01.LogManager\00.Logger\00.ConsoleLogger</Filter>
     </ClInclude>
     <ClInclude Include="TimeManager.h">
-      <Filter>02.Manager\02.TimeManager</Filter>
+      <Filter>03.Manager\02.TimeManager</Filter>
     </ClInclude>
     <ClInclude Include="DummyManager.h">
-      <Filter>02.Manager\03.DummyManager</Filter>
+      <Filter>03.Manager\03.DummyManager</Filter>
     </ClInclude>
     <ClInclude Include="StringManager.h">
-      <Filter>02.Manager\04.StringManager</Filter>
+      <Filter>03.Manager\04.StringManager</Filter>
     </ClInclude>
     <ClInclude Include="DataTypeManager.h">
-      <Filter>02.Manager\05.DataTypeManager</Filter>
+      <Filter>03.Manager\05.DataTypeManager</Filter>
     </ClInclude>
     <ClInclude Include="HashManager.h">
-      <Filter>02.Manager\06.HashManager</Filter>
+      <Filter>03.Manager\06.HashManager</Filter>
     </ClInclude>
     <ClInclude Include="ItemManager.h">
-      <Filter>02.Manager\07.ItemManager</Filter>
+      <Filter>03.Manager\07.ItemManager</Filter>
     </ClInclude>
     <ClInclude Include="FileLogger.h">
-      <Filter>02.Manager\01.LogManager\00.Logger\01.FileLogger</Filter>
+      <Filter>03.Manager\01.LogManager\00.Logger\01.FileLogger</Filter>
     </ClInclude>
     <ClInclude Include="ItemInfo.h">
-      <Filter>02.Manager\07.ItemManager\00.ItemInfo</Filter>
+      <Filter>03.Manager\07.ItemManager\00.ItemInfo</Filter>
     </ClInclude>
     <ClInclude Include="Item.h">
-      <Filter>02.Manager\07.ItemManager\01.Item</Filter>
+      <Filter>03.Manager\07.ItemManager\01.Item</Filter>
     </ClInclude>
     <ClInclude Include="UsableItem.h">
-      <Filter>02.Manager\07.ItemManager\01.Item\00.UsableItem</Filter>
+      <Filter>03.Manager\07.ItemManager\01.Item\00.UsableItem</Filter>
     </ClInclude>
     <ClInclude Include="Use.h">
       <Filter>00.Global\03.Interface\00.Use</Filter>
@@ -195,13 +210,22 @@
       <Filter>00.Global\03.Interface</Filter>
     </ClInclude>
     <ClInclude Include="LoadInclude.h">
-      <Filter>02.Manager\00.LoadManager</Filter>
+      <Filter>03.Manager\00.LoadManager</Filter>
     </ClInclude>
     <ClInclude Include="LogInclude.h">
-      <Filter>02.Manager\01.LogManager</Filter>
+      <Filter>03.Manager\01.LogManager</Filter>
     </ClInclude>
     <ClInclude Include="ItemInclude.h">
-      <Filter>02.Manager\07.ItemManager</Filter>
+      <Filter>03.Manager\07.ItemManager</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>01.Obj\00.Player</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjInclude.h">
+      <Filter>01.Obj</Filter>
+    </ClInclude>
+    <ClInclude Include="Creature.h">
+      <Filter>01.Obj\00.Creature</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

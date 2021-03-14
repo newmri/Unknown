@@ -29,7 +29,8 @@
 using namespace std;
 
 #include "Macro.h"
-#include "Obj.h"
+#include "ObjInclude.h"
+#include "InterfaceInclude.h"
 #include "LoadInclude.h"
 #include "LogInclude.h"
 #include "TimeManager.h"
@@ -38,4 +39,3 @@ using namespace std;
 #include "DataTypeManager.h"
 #include "HashManager.h"
 #include "ItemInclude.h"
-#include "InterfaceInclude.h"
