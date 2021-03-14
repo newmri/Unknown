@@ -12,6 +12,11 @@ TIME_POINT TimeManager::GetNow(void) const
 	return chrono::system_clock::now();
 }
 
+TIME_VALUE TimeManager::GetNowSeconds(void) const
+{
+	return chrono::duration_cast<chrono::seconds>(GetNow().time_since_epoch()).count();
+}
+
 void TimeManager::Start(void)
 {
 	this->start = GetNow();

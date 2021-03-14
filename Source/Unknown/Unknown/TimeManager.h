@@ -3,13 +3,18 @@
 #define TIME_MANAGER GET_INSTANCE(TimeManager)
 
 using TIME_POINT = chrono::system_clock::time_point;
+using TIME_VALUE = long long;
 
 class TimeManager
 {
 	DECLARE_SINGLETON(TimeManager)
 
+
 private:
 	TIME_POINT GetNow(void) const;
+
+public:
+	TIME_VALUE GetNowSeconds(void) const;
 
 public:
 	void Start(void);
