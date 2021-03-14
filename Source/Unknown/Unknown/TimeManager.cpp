@@ -17,6 +17,16 @@ TIME_VALUE TimeManager::GetNowSeconds(void) const
 	return chrono::duration_cast<chrono::seconds>(GetNow().time_since_epoch()).count();
 }
 
+TIME_VALUE TimeManager::GetEndSeconds(size_t limitTime) const
+{
+	TIME_VALUE endSeconds = limitTime;
+
+	if (endSeconds)
+		endSeconds += GetNowSeconds();
+
+	return endSeconds;
+}
+
 void TimeManager::Start(void)
 {
 	this->start = GetNow();

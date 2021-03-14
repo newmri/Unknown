@@ -15,6 +15,7 @@ private:
 
 public:
 	TIME_VALUE GetNowSeconds(void) const;
+	TIME_VALUE GetEndSeconds(size_t limitTime) const;
 
 public:
 	void Start(void);

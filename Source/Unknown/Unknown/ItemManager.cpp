@@ -43,7 +43,9 @@ optional<unique_ptr<Item>> ItemManager::CreateItem(const CREATURE_INFO& owner, c
 		auto createItemiter = createItemMap.find(itemInfoIter->second->type);
 
 		if (createItemiter != createItemMap.end())
-			return (this->*((*createItemiter).second))(owner, uniqueID, count, TIME_MANAGER.GetNowSeconds() + itemInfoIter->second->limitTime);
+		{
+			return (this->*((*createItemiter).second))(owner, uniqueID, count, TIME_MANAGER.GetEndSeconds(itemInfoIter->second->limitTime));
+		}
 	}
 
 	LOG.Log(LOG.MakeLog(LogType::LOG_ERROR, uniqueIDError + to_string(uniqueID) + " \t", __FILE__, __FUNCTION__, __LINE__));
