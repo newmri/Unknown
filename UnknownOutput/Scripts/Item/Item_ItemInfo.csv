@@ -1,4 +1,4 @@
-size_t,string,string,string,size_t,size_t,string,string,size_t,size_t,int,int,size_t,size_t,size_t,size_t
+size_t,string,string,string,size_t,size_t,string,string,long long,size_t,int,int,size_t,size_t,size_t,size_t
 0,초보자의 목검,Equip,Right Hand,1,5,None,Normal,43200,0,-1,0,100,50,1,0
 1,초보자의 방패,Equip,Left Hand,1,5,None,Normal,43200,1,-1,0,80,40,1,0
 2,초보자의 HP 포션,Use,None,1,10,None,Normal,0,2,-1,0,3,2,1000,0

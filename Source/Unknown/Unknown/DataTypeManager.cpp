@@ -5,6 +5,7 @@ IMPLEMENT_SINGLETON(DataTypeManager)
 void DataTypeManager::Init(void)
 {
 	getSizeOfTypeMap.insert(ProcessingMap::value_type(string(GET_INT_NAME), &DataTypeManager::GetSizeOfInt));
+	getSizeOfTypeMap.insert(ProcessingMap::value_type(string(GET_LONG_LONG_NAME), &DataTypeManager::GetSizeOfLongLong));
 	getSizeOfTypeMap.insert(ProcessingMap::value_type(string(GET_SIZE_T_NAME), &DataTypeManager::GetSizeOfSize_T));
 	getSizeOfTypeMap.insert(ProcessingMap::value_type(string(GET_FLOAT_NAME), &DataTypeManager::GetSizeOfFloat));
 	getSizeOfTypeMap.insert(ProcessingMap::value_type(string(GET_DOUBLE_NAME), &DataTypeManager::GetSizeOfDouble));
@@ -14,6 +15,11 @@ void DataTypeManager::Init(void)
 size_t DataTypeManager::GetSizeOfInt(void) const
 {
 	return SIZE_OF_INT;
+}
+
+size_t DataTypeManager::GetSizeOfLongLong(void) const
+{
+	return SIZE_OF_LONG_LONG;
 }
 
 size_t DataTypeManager::GetSizeOfSize_T(void) const
