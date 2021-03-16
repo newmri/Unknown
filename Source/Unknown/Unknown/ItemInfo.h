@@ -11,7 +11,7 @@ typedef struct
 	size_t usableMinLevel, usableMaxLevel;
 	string job;
 	string grade;
-	size_t limitTime;
+	TIME_VALUE limitTime;
 	size_t basicAddStatIndex;
 	int basicMulStatIndex;
 	int isCashItem;
@@ -24,15 +24,7 @@ typedef struct
 {
 	size_t index;
 	float gradeUpMulValue;
-	int hp;
-	int mp;
-	int attackDamage;
-	int magicDamage;
-	int strength;
-	int dexterity;
-	int intelligence;
-	int luck;
-	int critical;
+	BASIC_STAT stat;
 } ITEM_BASIC_STAT;
 
 #pragma pack(pop)

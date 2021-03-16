@@ -171,6 +171,7 @@
     <ClCompile Include="UsableItem.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="CommonStructureInclude.h" />
     <ClInclude Include="ConsoleLogger.h" />
     <ClInclude Include="Creature.h" />
     <ClInclude Include="CSVLoader.h" />
@@ -196,6 +197,7 @@
     <ClInclude Include="Loader.h" />
     <ClInclude Include="Macro.h" />
     <ClInclude Include="Obj.h" />
+    <ClInclude Include="Stat.h" />
     <ClInclude Include="StringManager.h" />
     <ClInclude Include="TimeManager.h" />
     <ClInclude Include="UsableItem.h" />
