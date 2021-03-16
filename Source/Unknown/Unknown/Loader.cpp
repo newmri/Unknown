@@ -87,6 +87,11 @@ void Loader::Parse(string& in, const size_t dataTypeIndex, char* out)
 		Parse(in, CHAR_TO_INT_REF out);
 	}
 
+	else if (hashCode == HashCode(GET_LONG_LONG_NAME))
+	{
+		Parse(in, CHAR_TO_LONG_LONG_REF out);
+	}
+
 	else if (hashCode == HashCode(GET_FLOAT_NAME))
 	{
 		Parse(in, CHAR_TO_FLOAT_REF out);
@@ -111,6 +116,9 @@ void Loader::Parse(string& in, const size_t dataTypeIndex, char* out)
 	{
 	case HashCode(GET_INT_NAME):
 		Parse(in, CHAR_TO_INT_REF out);
+		break;
+	case HashCode(GET_LONG_LONG_NAME):
+		Parse(in, CHAR_TO_LONG_LONG_REF out);
 		break;
 	case HashCode(GET_SIZE_T_NAME):
 		Parse(in, CHAR_TO_SIZE_T_REF out);
