@@ -1,4 +1,4 @@
-size_t,float,int,int,int,int,int,int,int,int,int
+size_t,float,long long,int,long long,long long,int,int,int,int,int
 0,2,0,0,3,0,1,1,1,1,1
 1,2,0,0,0,0,1,1,0,0,0
 2,2,10,0,0,0,0,0,0,0,0

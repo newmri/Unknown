@@ -4,10 +4,10 @@
 
 typedef struct
 {
-	int hp;
+	long long hp;
 	int mp;
-	int attackDamage;
-	int magicDamage;
+	long long attackDamage;
+	long long magicDamage;
 	int strength;
 	int dexterity;
 	int intelligence;
