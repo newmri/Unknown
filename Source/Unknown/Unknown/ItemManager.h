@@ -22,7 +22,8 @@ public:
 
 private:
 	unordered_map<size_t, unique_ptr<ITEM_INFO>> itemInfo;
-	unordered_map<size_t, unique_ptr<ITEM_BASIC_STAT>> itemBasicAddStat, itemBasicMulStat;
+	unordered_map<size_t, unique_ptr<ITEM_BASIC_ADD_STAT>> itemBasicAddStat;
+	unordered_map<size_t, unique_ptr<ITEM_BASIC_MUL_STAT>> itemBasicMulStat;
 
 private:
 	typedef optional<unique_ptr<Item>>(ItemManager::* FUNC)(const CREATURE_INFO& owner, const size_t uniqueID, const size_t count, const TIME_VALUE timeLimit) const;

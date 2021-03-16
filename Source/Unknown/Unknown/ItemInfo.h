@@ -24,7 +24,14 @@ typedef struct
 {
 	size_t index;
 	float gradeUpMulValue;
-	BASIC_STAT stat;
-} ITEM_BASIC_STAT;
+	BASIC_ADD_STAT stat;
+} ITEM_BASIC_ADD_STAT;
+
+typedef struct
+{
+	size_t index;
+	float gradeUpMulValue;
+	BASIC_MUL_STAT stat;
+} ITEM_BASIC_MUL_STAT;
 
 #pragma pack(pop)
