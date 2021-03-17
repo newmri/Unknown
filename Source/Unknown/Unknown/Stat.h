@@ -13,7 +13,7 @@ typedef struct
 	int intelligence;
 	int luck;
 	int critical;
-}BASIC_ADD_STAT;
+}BASIC_STAT;
 
 typedef struct
 {

@@ -34,17 +34,77 @@ optional<unique_ptr<Item>> ItemManager::CreateUsableItem(const CREATURE_INFO& ow
 	return make_unique<UsableItem>(owner, uniqueID, count, limitTime);
 }
 
+optional<shared_ptr<ITEM_INFO>> ItemManager::GetItemInfo(const size_t uniqueID) const
+{
+	auto iter = itemInfo.find(uniqueID);
+
+	if (iter != itemInfo.end())
+	{
+		return iter->second;
+	}
+
+	return nullopt;
+}
+
+optional<shared_ptr<ITEM_BASIC_ADD_STAT>> ItemManager::GetItemBasicAddStatInfo(const size_t uniqueID) const
+{
+	auto info = GetItemInfo(uniqueID);
+
+	if (info.has_value())
+	{
+		if (NO_DATA != (*info)->basicAddStatIndex)
+		{
+			auto iter = itemBasicAddStat.find((*info)->basicAddStatIndex);
+
+			if (iter != itemBasicAddStat.end())
+			{
+				return iter->second;
+			}
+		}
+
+		return nullopt;
+	}
+
+	LOG.Log(LOG.MakeLog(LogType::LOG_ERROR, uniqueIDError + to_string(uniqueID) + " \t", __FILE__, __FUNCTION__, __LINE__));
+
+	return nullopt;
+}
+
+optional<shared_ptr<ITEM_BASIC_MUL_STAT>> ItemManager::GetItemBasicMulStatInfo(const size_t uniqueID) const
+{
+	auto info = GetItemInfo(uniqueID);
+
+	if (info.has_value())
+	{
+		if (NO_DATA != (*info)->basicMulStatIndex)
+		{
+			auto iter = itemBasicMulStat.find((*info)->basicMulStatIndex);
+
+			if (iter != itemBasicMulStat.end())
+			{
+				return iter->second;
+			}
+		}
+
+		return nullopt;
+	}
+
+	LOG.Log(LOG.MakeLog(LogType::LOG_ERROR, uniqueIDError + to_string(uniqueID) + " \t", __FILE__, __FUNCTION__, __LINE__));
+
+	return nullopt;
+}
+
 optional<unique_ptr<Item>> ItemManager::CreateItem(const CREATURE_INFO& owner, const size_t uniqueID, const size_t count) const
 {
-	auto itemInfoIter = itemInfo.find(uniqueID);
+	auto info = GetItemInfo(uniqueID);
 
-	if (itemInfoIter != itemInfo.end())
+	if (info.has_value())
 	{
-		auto createItemiter = createItemMap.find(itemInfoIter->second->type);
+		auto iter = createItemMap.find((*info)->type);
 
-		if (createItemiter != createItemMap.end())
+		if (iter != createItemMap.end())
 		{
-			return (this->*((*createItemiter).second))(owner, uniqueID, count, TIME_MANAGER.GetEndSeconds(itemInfoIter->second->limitTime));
+			return (this->*((*iter).second))(owner, uniqueID, count, TIME_MANAGER.GetEndSeconds((*info)->limitTime));
 		}
 	}
 

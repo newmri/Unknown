@@ -99,7 +99,7 @@
 	for (size_t i = 0; i < ROWS; ++i)										\
 	{																		\
 		IN_TYPE info = data[i];												\
-		OUT[data[i].KEY] = make_unique<IN_TYPE>(info);						\
+		OUT[data[i].KEY] = make_shared<IN_TYPE>(info);						\
 	}																		\
 	SAFE_DELETE_DTOR(ROWS, RAW_PTR, IN_TYPE, data);
 

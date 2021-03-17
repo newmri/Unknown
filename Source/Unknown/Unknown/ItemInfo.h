@@ -12,7 +12,7 @@ typedef struct
 	string job;
 	string grade;
 	TIME_VALUE limitTime;
-	size_t basicAddStatIndex;
+	int basicAddStatIndex;
 	int basicMulStatIndex;
 	int isCashItem;
 	size_t buyPrice, sellPrice;
@@ -24,7 +24,7 @@ typedef struct
 {
 	size_t index;
 	float gradeUpMulValue;
-	BASIC_ADD_STAT stat;
+	BASIC_STAT stat;
 } ITEM_BASIC_ADD_STAT;
 
 typedef struct

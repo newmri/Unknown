@@ -19,12 +19,6 @@
     <Filter Include="01.Obj">
       <UniqueIdentifier>{dc8e4668-571e-4317-8916-641a98d008fc}</UniqueIdentifier>
     </Filter>
-    <Filter Include="00.Global\03.Interface">
-      <UniqueIdentifier>{26c98600-1e54-4842-be72-b3d79dea6257}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="00.Global\03.Interface\00.Use">
-      <UniqueIdentifier>{ce44c016-0de3-4aea-8155-4ed11742f129}</UniqueIdentifier>
-    </Filter>
     <Filter Include="03.Manager">
       <UniqueIdentifier>{79899359-6d5c-433f-8095-496b01fe1d3f}</UniqueIdentifier>
     </Filter>
@@ -88,10 +82,16 @@
     <Filter Include="01.Obj\00.Creature\00.Player">
       <UniqueIdentifier>{b4118f48-aa6f-4f62-a785-afb08505df35}</UniqueIdentifier>
     </Filter>
-    <Filter Include="00.Global\04.CommonStructure">
+    <Filter Include="00.Global\04.Interface">
+      <UniqueIdentifier>{26c98600-1e54-4842-be72-b3d79dea6257}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="00.Global\04.Interface\00.Use">
+      <UniqueIdentifier>{ce44c016-0de3-4aea-8155-4ed11742f129}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="00.Global\03.CommonStructure">
       <UniqueIdentifier>{9379f74b-7a34-426a-8790-137c489eb07b}</UniqueIdentifier>
     </Filter>
-    <Filter Include="00.Global\04.CommonStructure\00.Stat">
+    <Filter Include="00.Global\03.CommonStructure\00.Stat">
       <UniqueIdentifier>{3bb7e05c-8394-4c79-863c-c31c5386e9f9}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
@@ -210,10 +210,10 @@
       <Filter>03.Manager\07.ItemManager\01.Item\00.UsableItem</Filter>
     </ClInclude>
     <ClInclude Include="Use.h">
-      <Filter>00.Global\03.Interface\00.Use</Filter>
+      <Filter>00.Global\04.Interface\00.Use</Filter>
     </ClInclude>
     <ClInclude Include="InterfaceInclude.h">
-      <Filter>00.Global\03.Interface</Filter>
+      <Filter>00.Global\04.Interface</Filter>
     </ClInclude>
     <ClInclude Include="LoadInclude.h">
       <Filter>03.Manager\00.LoadManager</Filter>
@@ -234,10 +234,10 @@
       <Filter>01.Obj\00.Creature</Filter>
     </ClInclude>
     <ClInclude Include="CommonStructureInclude.h">
-      <Filter>00.Global\04.CommonStructure</Filter>
+      <Filter>00.Global\03.CommonStructure</Filter>
     </ClInclude>
     <ClInclude Include="Stat.h">
-      <Filter>00.Global\04.CommonStructure\00.Stat</Filter>
+      <Filter>00.Global\03.CommonStructure\00.Stat</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

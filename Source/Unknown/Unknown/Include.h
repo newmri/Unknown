@@ -29,9 +29,9 @@
 using namespace std;
 
 #include "Macro.h"
+#include "CommonStructureInclude.h"
 #include "ObjInclude.h"
 #include "InterfaceInclude.h"
-#include "CommonStructureInclude.h"
 #include "LoadInclude.h"
 #include "LogInclude.h"
 #include "TimeManager.h"

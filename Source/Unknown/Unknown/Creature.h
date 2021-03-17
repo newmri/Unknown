@@ -19,12 +19,6 @@ typedef struct _CREATURE_INFO_
 	size_t uniqueID;
 } CREATURE_INFO;
 
-typedef struct _CREATURE_STAT_
-{
-	_CREATURE_STAT_() = delete;
-
-} CREATURE_STAT;
-
 #pragma pack(pop)
 
 class Creature : public Obj
@@ -36,4 +30,5 @@ public:
 
 protected:
 	CREATURE_INFO info;
+	BASIC_STAT stat;
 };
