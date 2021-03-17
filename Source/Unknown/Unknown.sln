@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.29519.181
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Unknown", "Unknown\Unknown.vcxproj", "{60B6BA27-319F-4CBD-B587-2A60CF0E85AA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExcelToCSV", "..\ExcelToCSV\ExcelToCSV\ExcelToCSV.csproj", "{C0AC5C1F-76DF-47B1-8280-D88F1303163D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExcelToCSV", "ExcelToCSV\ExcelToCSV.csproj", "{C0AC5C1F-76DF-47B1-8280-D88F1303163D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
