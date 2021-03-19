@@ -1,5 +1,10 @@
 #include "Global.h"
 
+Player::Player()
+{
+	Init();
+}
+
 Player::~Player()
 {
 
@@ -14,3 +19,4 @@ Player::Player(const CREATURE_INFO info) : Creature(info)
 {
 
 }
+

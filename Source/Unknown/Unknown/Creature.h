@@ -12,7 +12,7 @@ enum class CreatureType : size_t
 
 typedef struct _CREATURE_INFO_
 {
-	_CREATURE_INFO_() = delete;
+	_CREATURE_INFO_() = default;
 	_CREATURE_INFO_(const CreatureType type, const size_t uniqueID) : type(type), uniqueID(uniqueID) {}
 
 	CreatureType type;
@@ -23,7 +23,7 @@ typedef struct _CREATURE_INFO_
 
 class Creature : public Obj
 {
-	OVERRIDE_OBJ_DELETE_DEFAULT_CONSTRUCTOR(Creature)
+	OVERRIDE_OBJ(Creature)
 
 public:
 	Creature(const CREATURE_INFO info);

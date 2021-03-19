@@ -25,12 +25,14 @@
 #include <unordered_map>
 #include <direct.h>
 #include <optional>
+#include <array>
 
 using namespace std;
 
 #include "Macro.h"
 #include "CommonStructureInclude.h"
 #include "ObjInclude.h"
+#include "CreatureInclude.h"
 #include "InterfaceInclude.h"
 #include "LoadInclude.h"
 #include "LogInclude.h"

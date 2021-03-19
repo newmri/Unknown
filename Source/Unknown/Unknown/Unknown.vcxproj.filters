@@ -1,24 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="02.Main">
-      <UniqueIdentifier>{cc14e8cb-f0f0-45f6-a844-1e34bb016f6e}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="00.Global">
-      <UniqueIdentifier>{b9c104bb-0c9e-43fa-b10a-67f7a9c8994e}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="00.Global\00.Define">
-      <UniqueIdentifier>{36fe87be-e70a-47f0-9014-1fb00d47bf2f}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="00.Global\01.Macro">
-      <UniqueIdentifier>{6dbf8b0f-87ed-4b53-afad-57e173de24ae}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="00.Global\02.Include">
-      <UniqueIdentifier>{1bea0d7f-7aa8-4184-8d2f-57860bddf58e}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="01.Obj">
-      <UniqueIdentifier>{dc8e4668-571e-4317-8916-641a98d008fc}</UniqueIdentifier>
-    </Filter>
     <Filter Include="03.Manager">
       <UniqueIdentifier>{79899359-6d5c-433f-8095-496b01fe1d3f}</UniqueIdentifier>
     </Filter>
@@ -61,43 +43,64 @@
     <Filter Include="03.Manager\06.HashManager">
       <UniqueIdentifier>{f93531f0-23c9-435a-a0a8-b9560e7b8cb2}</UniqueIdentifier>
     </Filter>
-    <Filter Include="03.Manager\07.ItemManager">
-      <UniqueIdentifier>{c9790157-6d6d-4788-92e6-5bc2357c78b5}</UniqueIdentifier>
+    <Filter Include="01.Global">
+      <UniqueIdentifier>{b9c104bb-0c9e-43fa-b10a-67f7a9c8994e}</UniqueIdentifier>
     </Filter>
-    <Filter Include="03.Manager\07.ItemManager\00.ItemInfo">
-      <UniqueIdentifier>{5124d0be-23b9-435d-be58-ab723be4682e}</UniqueIdentifier>
+    <Filter Include="01.Global\00.Define">
+      <UniqueIdentifier>{36fe87be-e70a-47f0-9014-1fb00d47bf2f}</UniqueIdentifier>
     </Filter>
-    <Filter Include="03.Manager\07.ItemManager\01.Item">
-      <UniqueIdentifier>{332299ab-2b86-4e96-9a31-34c3d8424966}</UniqueIdentifier>
+    <Filter Include="01.Global\01.Macro">
+      <UniqueIdentifier>{6dbf8b0f-87ed-4b53-afad-57e173de24ae}</UniqueIdentifier>
     </Filter>
-    <Filter Include="03.Manager\07.ItemManager\01.Item\00.UsableItem">
-      <UniqueIdentifier>{4abc2923-62a4-47ef-bb19-4266ba745e26}</UniqueIdentifier>
+    <Filter Include="01.Global\02.Include">
+      <UniqueIdentifier>{1bea0d7f-7aa8-4184-8d2f-57860bddf58e}</UniqueIdentifier>
     </Filter>
-    <Filter Include="03.Manager\07.ItemManager\01.Item\01.EquipItem">
-      <UniqueIdentifier>{357bbc38-f1d5-47d8-bc2a-a23c4b652b51}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="01.Obj\00.Creature">
-      <UniqueIdentifier>{85d87240-b231-41be-b555-d5e256c7c812}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="01.Obj\00.Creature\00.Player">
-      <UniqueIdentifier>{b4118f48-aa6f-4f62-a785-afb08505df35}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="00.Global\04.Interface">
+    <Filter Include="01.Global\04.Interface">
       <UniqueIdentifier>{26c98600-1e54-4842-be72-b3d79dea6257}</UniqueIdentifier>
     </Filter>
-    <Filter Include="00.Global\04.Interface\00.Use">
+    <Filter Include="01.Global\04.Interface\00.Use">
       <UniqueIdentifier>{ce44c016-0de3-4aea-8155-4ed11742f129}</UniqueIdentifier>
     </Filter>
-    <Filter Include="00.Global\03.CommonStructure">
+    <Filter Include="01.Global\03.CommonStructure">
       <UniqueIdentifier>{9379f74b-7a34-426a-8790-137c489eb07b}</UniqueIdentifier>
     </Filter>
-    <Filter Include="00.Global\03.CommonStructure\00.Stat">
+    <Filter Include="01.Global\03.CommonStructure\00.Stat">
       <UniqueIdentifier>{3bb7e05c-8394-4c79-863c-c31c5386e9f9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02.Obj">
+      <UniqueIdentifier>{dc8e4668-571e-4317-8916-641a98d008fc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="00.Main">
+      <UniqueIdentifier>{cc14e8cb-f0f0-45f6-a844-1e34bb016f6e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03.Manager\08.ItemManager">
+      <UniqueIdentifier>{c9790157-6d6d-4788-92e6-5bc2357c78b5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03.Manager\08.ItemManager\00.ItemInfo">
+      <UniqueIdentifier>{5124d0be-23b9-435d-be58-ab723be4682e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03.Manager\08.ItemManager\01.Item">
+      <UniqueIdentifier>{332299ab-2b86-4e96-9a31-34c3d8424966}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03.Manager\08.ItemManager\01.Item\00.UsableItem">
+      <UniqueIdentifier>{4abc2923-62a4-47ef-bb19-4266ba745e26}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03.Manager\08.ItemManager\01.Item\01.EquipItem">
+      <UniqueIdentifier>{357bbc38-f1d5-47d8-bc2a-a23c4b652b51}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03.Manager\07.CreatureManager">
+      <UniqueIdentifier>{d44f2d86-c3d7-46ed-9f03-9d0a02270b38}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03.Manager\07.CreatureManager\00.Creature">
+      <UniqueIdentifier>{85d87240-b231-41be-b555-d5e256c7c812}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03.Manager\07.CreatureManager\00.Creature\00.Player">
+      <UniqueIdentifier>{b4118f48-aa6f-4f62-a785-afb08505df35}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
-      <Filter>02.Main</Filter>
+      <Filter>00.Main</Filter>
     </ClCompile>
     <ClCompile Include="CSVLoader.cpp">
       <Filter>03.Manager\00.LoadManager\00.Loader\00.CSVLoader</Filter>
@@ -124,7 +127,7 @@
       <Filter>03.Manager\06.HashManager</Filter>
     </ClCompile>
     <ClCompile Include="ItemManager.cpp">
-      <Filter>03.Manager\07.ItemManager</Filter>
+      <Filter>03.Manager\08.ItemManager</Filter>
     </ClCompile>
     <ClCompile Include="FileLogger.cpp">
       <Filter>03.Manager\01.LogManager\00.Logger\01.FileLogger</Filter>
@@ -133,33 +136,36 @@
       <Filter>03.Manager\01.LogManager\00.Logger</Filter>
     </ClCompile>
     <ClCompile Include="Item.cpp">
-      <Filter>03.Manager\07.ItemManager\01.Item</Filter>
+      <Filter>03.Manager\08.ItemManager\01.Item</Filter>
     </ClCompile>
     <ClCompile Include="UsableItem.cpp">
-      <Filter>03.Manager\07.ItemManager\01.Item\00.UsableItem</Filter>
+      <Filter>03.Manager\08.ItemManager\01.Item\00.UsableItem</Filter>
     </ClCompile>
     <ClCompile Include="Player.cpp">
-      <Filter>01.Obj\00.Creature\00.Player</Filter>
+      <Filter>03.Manager\07.CreatureManager\00.Creature\00.Player</Filter>
     </ClCompile>
     <ClCompile Include="Creature.cpp">
-      <Filter>01.Obj\00.Creature</Filter>
+      <Filter>03.Manager\07.CreatureManager\00.Creature</Filter>
+    </ClCompile>
+    <ClCompile Include="CreatureManager.cpp">
+      <Filter>03.Manager\07.CreatureManager</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Obj.h">
-      <Filter>01.Obj</Filter>
+      <Filter>02.Obj</Filter>
     </ClInclude>
     <ClInclude Include="Global.h">
-      <Filter>00.Global</Filter>
+      <Filter>01.Global</Filter>
     </ClInclude>
     <ClInclude Include="Define.h">
-      <Filter>00.Global\00.Define</Filter>
+      <Filter>01.Global\00.Define</Filter>
     </ClInclude>
     <ClInclude Include="Macro.h">
-      <Filter>00.Global\01.Macro</Filter>
+      <Filter>01.Global\01.Macro</Filter>
     </ClInclude>
     <ClInclude Include="Include.h">
-      <Filter>00.Global\02.Include</Filter>
+      <Filter>01.Global\02.Include</Filter>
     </ClInclude>
     <ClInclude Include="Loader.h">
       <Filter>03.Manager\00.LoadManager\00.Loader</Filter>
@@ -195,25 +201,25 @@
       <Filter>03.Manager\06.HashManager</Filter>
     </ClInclude>
     <ClInclude Include="ItemManager.h">
-      <Filter>03.Manager\07.ItemManager</Filter>
+      <Filter>03.Manager\08.ItemManager</Filter>
     </ClInclude>
     <ClInclude Include="FileLogger.h">
       <Filter>03.Manager\01.LogManager\00.Logger\01.FileLogger</Filter>
     </ClInclude>
     <ClInclude Include="ItemInfo.h">
-      <Filter>03.Manager\07.ItemManager\00.ItemInfo</Filter>
+      <Filter>03.Manager\08.ItemManager\00.ItemInfo</Filter>
     </ClInclude>
     <ClInclude Include="Item.h">
-      <Filter>03.Manager\07.ItemManager\01.Item</Filter>
+      <Filter>03.Manager\08.ItemManager\01.Item</Filter>
     </ClInclude>
     <ClInclude Include="UsableItem.h">
-      <Filter>03.Manager\07.ItemManager\01.Item\00.UsableItem</Filter>
+      <Filter>03.Manager\08.ItemManager\01.Item\00.UsableItem</Filter>
     </ClInclude>
     <ClInclude Include="Use.h">
-      <Filter>00.Global\04.Interface\00.Use</Filter>
+      <Filter>01.Global\04.Interface\00.Use</Filter>
     </ClInclude>
     <ClInclude Include="InterfaceInclude.h">
-      <Filter>00.Global\04.Interface</Filter>
+      <Filter>01.Global\04.Interface</Filter>
     </ClInclude>
     <ClInclude Include="LoadInclude.h">
       <Filter>03.Manager\00.LoadManager</Filter>
@@ -222,22 +228,28 @@
       <Filter>03.Manager\01.LogManager</Filter>
     </ClInclude>
     <ClInclude Include="ItemInclude.h">
-      <Filter>03.Manager\07.ItemManager</Filter>
+      <Filter>03.Manager\08.ItemManager</Filter>
     </ClInclude>
     <ClInclude Include="Player.h">
-      <Filter>01.Obj\00.Creature\00.Player</Filter>
+      <Filter>03.Manager\07.CreatureManager\00.Creature\00.Player</Filter>
     </ClInclude>
     <ClInclude Include="ObjInclude.h">
-      <Filter>01.Obj</Filter>
+      <Filter>02.Obj</Filter>
     </ClInclude>
     <ClInclude Include="Creature.h">
-      <Filter>01.Obj\00.Creature</Filter>
+      <Filter>03.Manager\07.CreatureManager\00.Creature</Filter>
     </ClInclude>
     <ClInclude Include="CommonStructureInclude.h">
-      <Filter>00.Global\03.CommonStructure</Filter>
+      <Filter>01.Global\03.CommonStructure</Filter>
     </ClInclude>
     <ClInclude Include="Stat.h">
-      <Filter>00.Global\03.CommonStructure\00.Stat</Filter>
+      <Filter>01.Global\03.CommonStructure\00.Stat</Filter>
+    </ClInclude>
+    <ClInclude Include="CreatureManager.h">
+      <Filter>03.Manager\07.CreatureManager</Filter>
+    </ClInclude>
+    <ClInclude Include="CreatureInclude.h">
+      <Filter>03.Manager\07.CreatureManager</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

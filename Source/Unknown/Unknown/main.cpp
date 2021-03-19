@@ -13,6 +13,7 @@ int main(void)
 	try
 	{
 		ITEM_MANAGER.Load();
+		CREATURE_MANAGER.EnterPlayer();
 	}
 
 	catch (exception e)

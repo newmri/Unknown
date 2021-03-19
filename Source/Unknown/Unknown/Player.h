@@ -1,8 +1,10 @@
 #pragma once
 
+static const size_t DEFAULT_PLAYER_INVENTORY_NUM = 10;
+
 class Player : public Creature
 {
-	OVERRIDE_OBJ_DELETE_DEFAULT_CONSTRUCTOR(Player)
+	OVERRIDE_OBJ(Player)
 
 public:
 	Player(const CREATURE_INFO info);

@@ -155,6 +155,7 @@
   <ItemGroup>
     <ClCompile Include="ConsoleLogger.cpp" />
     <ClCompile Include="Creature.cpp" />
+    <ClCompile Include="CreatureManager.cpp" />
     <ClCompile Include="CSVLoader.cpp" />
     <ClCompile Include="DataTypeManager.cpp" />
     <ClCompile Include="DummyManager.cpp" />
@@ -174,6 +175,8 @@
     <ClInclude Include="CommonStructureInclude.h" />
     <ClInclude Include="ConsoleLogger.h" />
     <ClInclude Include="Creature.h" />
+    <ClInclude Include="CreatureInclude.h" />
+    <ClInclude Include="CreatureManager.h" />
     <ClInclude Include="CSVLoader.h" />
     <ClInclude Include="DataTypeManager.h" />
     <ClInclude Include="DummyManager.h" />

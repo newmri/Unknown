@@ -1,5 +1,11 @@
 #include "Global.h"
 
+Creature::Creature()
+{
+
+}
+
+
 Creature::~Creature()
 {
 
